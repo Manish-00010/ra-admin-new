@@ -1,0 +1,115 @@
+import {
+  AppsRoutes,
+  BlankRoutes,
+  DashboardRoutes,
+  IndependentRoutes,
+  UiKitRoutes,
+  AdvanceUiRoutes,
+  IconsRoutes,
+  MISC_PAGE,
+  mapRoutes,
+  chartRoutes,
+  apexChartRoutes,
+  AuthRoutes,
+  ErrorRoutes,
+  OtherRoutes,
+  TableRoutes,
+  FormElementRoutes,
+  ReadyUseRoutes,
+} from "@/Route/AuthRoutes";
+
+export const sidebarConfig = [
+  {
+    type: "dropdown",
+    title: "Dashboard",
+    iconClass: "ph-duotone ph-house-line",
+    name: "dashboard",
+    collapseId: "dashboard",
+    path: "/dashboard",
+    children: [
+      { name: "Amazon", path: DashboardRoutes.ECOMMERCE_PAGE },
+      { name: "D2C", path: DashboardRoutes.ECOMMERCE_PAGE },
+    ],
+  },
+  {
+    type: "dropdown",
+    title: "Product Catalog",
+    iconClass: "ph-duotone ph-package",
+    name: "product-catalog",
+    collapseId: "product-catalog",
+    path: "/product-catalog",
+    children: [
+      { name: "Amazon Product", path: AppsRoutes.SHOP_PRODUCT_PAGE },
+      { name: "D2C Product", path: AppsRoutes.SHOP_PRODUCT_PAGE },
+    ],
+  },
+  {
+    type: "dropdown",
+    title: "Brand Page",
+    iconClass: "ph-duotone ph-briefcase",
+    name: "brand-page",
+    collapseId: "brand-page",
+    path: "/brand-page",
+    children: [
+      { name: "Amazon", path: AppsRoutes.PROJECTS_PAGE },
+      { name: "D2C", path: AppsRoutes.PROJECTS_PAGE },
+    ],
+  },
+  {
+    type: "dropdown",
+    title: "My Link",
+    iconClass: "ph-duotone ph-link",
+    name: "my-link",
+    collapseId: "my-link",
+    path: "/my-link",
+    children: [
+      { name: "Amazon", path: DashboardRoutes.ECOMMERCE_PAGE },
+      { name: "D2C", path: DashboardRoutes.ECOMMERCE_PAGE },
+    ],
+  },
+  {
+    type: "dropdown",
+    title: "Reports",
+    iconClass: "ph-duotone ph-chart-bar",
+    name: "reports",
+    collapseId: "reports",
+    path: "/reports",
+    children: [
+      {
+        name: "Amazon Report",
+        path: "/reports/amazon",
+        collapseId: "amazon-report",
+        children: [
+          { name: "Performance Report", path: TableRoutes.DATA_TABLE },
+          { name: "Conversion Report", path: AppsRoutes.SHOP_ORDERS_PAGE },
+        ],
+      },
+      {
+        name: "D2C Report",
+        path: "/reports/d2c",
+        collapseId: "d2c-report",
+        children: [
+          { name: "Performance Report", path: TableRoutes.DATA_TABLE },
+          { name: "Conversion Report", path: AppsRoutes.SHOP_ORDERS_PAGE },
+        ],
+      },
+    ],
+  },
+  {
+    type: "dropdown",
+    title: "My Profile",
+    iconClass: "ph-duotone ph-user",
+    name: "my-profile",
+    collapseId: "my-profile",
+    path: "/my-profile",
+    children: [
+      { name: "View Profile", path: AppsRoutes.PROFILE_PAGE },
+      { name: "Change Password", path: AppsRoutes.SETTING_PAGE },
+    ],
+  },
+  {
+    name: "Logout",
+    path: "#",
+    iconClass: "ph-duotone ph-sign-out",
+  },
+];
