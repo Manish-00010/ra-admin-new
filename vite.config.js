@@ -1,8 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { resolve } from 'path'
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
   css: {
     preprocessorOptions: {
@@ -13,7 +14,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': '/src',
+      '@': resolve(__dirname, 'src'),
     },
   },
   esbuild: {
@@ -22,20 +23,40 @@ export default defineConfig({
     exclude: [],
   },
   build: {
-    sourcemap: false,
+    sourcemap: mode === 'development',
     outDir: 'dist',
     manualChunks: {
-      vendor: ['react-dom/client'],
+      vendor: ['react', 'react-dom'],
+      charts: ['react-apexcharts', 'react-chartjs-2', 'chart.js'],
+      ui: ['reactstrap', 'react-bootstrap'],
+      router: ['react-router-dom'],
     },
+    rollupOptions: {
+      output: {
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
+      }
+    }
+  },
+  server: {
+    port: 3000,
+    open: true,
+    hmr: {
+      overlay: true
+    }
+  },
+  preview: {
+    port: 4173,
+    open: true
   },
   optimizeDeps: {
-    optimizeDeps: {
-      include: [],
-    },
-    esbuildOptions: {
-      loader: {
-        '.js': 'jsx',
-      },
-    },
-  },
-})
+    include: [
+      'react',
+      'react-dom',
+      'react-router-dom',
+      'reactstrap',
+      'bootstrap'
+    ]
+  }
+}))

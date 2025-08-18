@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import {
   Button,
   Card,
@@ -10,11 +10,54 @@ import {
 } from "reactstrap";
 import { products } from "@/Data/Eshopproduct/Eshopproduct";
 import { Link } from "react-router-dom";
+import { useDebounce } from "@/hooks/useDebounce";
 
 const Product = () => {
   // State to track the layout view
-  const [layout, setLayout] = useState("col-xxl-4"); // Default to 4-column view
+  const [layout, setLayout] = useState("col-xl-4 col-sm-4 col-lg-4"); // Default to 4-column view
   const [isListView, setIsListView] = useState(false); // Toggle between grid and list view
+  const [searchTerm, setSearchTerm] = useState("");
+  const [sortBy, setSortBy] = useState("name");
+  const [filterCategory, setFilterCategory] = useState("all");
+  
+  // Debounce search term for better performance
+  const debouncedSearchTerm = useDebounce(searchTerm, 300);
+
+  // Memoized filtered and sorted products
+  const filteredProducts = useMemo(() => {
+    let filtered = products;
+
+    // Filter by search term
+    if (debouncedSearchTerm) {
+      filtered = filtered.filter(product =>
+        (product.title || product.name || '').toLowerCase().includes(debouncedSearchTerm.toLowerCase()) ||
+        (product.category || '').toLowerCase().includes(debouncedSearchTerm.toLowerCase())
+      );
+    }
+
+    // Filter by category
+    if (filterCategory !== "all") {
+      filtered = filtered.filter(product => product.category === filterCategory);
+    }
+
+    // Sort products
+    filtered.sort((a, b) => {
+      switch (sortBy) {
+        case "name":
+          const nameA = a.title || a.name || '';
+          const nameB = b.title || b.name || '';
+          return nameA.localeCompare(nameB);
+        case "price":
+          return (a.price || 0) - (b.price || 0);
+        case "date":
+          return new Date(b.createdAt || 0) - new Date(a.createdAt || 0);
+        default:
+          return 0;
+      }
+    });
+
+    return filtered;
+  }, [debouncedSearchTerm, filterCategory, sortBy]);
 
   // Button click handlers
   const handleGridLayout = () => {
@@ -35,20 +78,16 @@ const Product = () => {
             <h4 className="main-title">Amazon Products</h4>
             <ul className="app-line-breadcrumbs mb-3">
               <li className="">
-                <a href="#" className="f-s-14 f-w-500">
-                  <i className="ph-duotone ph-house"></i>
-                </a>
+                <Link to="/Amazon/dashboard" className="f-s-14 f-w-500">
+                  Dashboard
+                </Link>
               </li>
-              <li className="active">
-                <a href="#" className="f-s-14 f-w-500">
-                  Product
-                </a>
-              </li>
+              <li className="active">Products</li>
             </ul>
           </div>
         </Row>
         <Row>
-          <Col xs={12} >
+          <Col xs={12}>
             <Card>
               <CardBody>
                 <div className="product-header d-flex justify-content-between gap-3 align-items-center">
@@ -67,8 +106,10 @@ const Product = () => {
                         <input
                           type="search"
                           className="form-control"
-                          placeholder="Search..."
+                          placeholder="Search products..."
                           aria-label="Search"
+                          value={searchTerm}
+                          onChange={(e) => setSearchTerm(e.target.value)}
                         />
                         <i className="ti ti-search text-dark"></i>
                       </div>
@@ -113,44 +154,48 @@ const Product = () => {
                                   data-bs-parent="#accordion-flush-sort-by"
                                 >
                                   <div>
-                                    <label className="check-box m-3">
-                                      <input type="radio" name="radio-group1" />
-                                      <span className="radiomark outline-secondary"></span>
+                                    <label className="check-box two m-3 ">
+                                      <input
+                                        checked
+                                        type="radio"
+                                        name="radio-group1"
+                                      />
+                                      <span className="radiomark two outline-secondary"></span>
                                       <span className="text-secondary">
                                         Best Sellers
                                       </span>
                                     </label>
-                                    <label className="check-box m-3">
+                                    <label className="check-box two m-3 ">
                                       <input type="radio" name="radio-group1" />
-                                      <span className="radiomark outline-secondary"></span>
+                                      <span className="radiomark two outline-secondary"></span>
                                       <span className="text-secondary">
                                         Highest Rated
                                       </span>
                                     </label>
-                                    <label className="check-box m-3">
+                                    <label className="check-box two m-3 ">
                                       <input type="radio" name="radio-group1" />
-                                      <span className="radiomark outline-secondary"></span>
+                                      <span className="radiomark two outline-secondary"></span>
                                       <span className="text-secondary">
                                         Highest Commission
                                       </span>
                                     </label>
-                                    <label className="check-box m-3">
+                                    <label className="check-box two m-3 ">
                                       <input type="radio" name="radio-group1" />
-                                      <span className="radiomark outline-secondary"></span>
+                                      <span className="radiomark two outline-secondary"></span>
                                       <span className="text-secondary">
                                         Price: Low to High
                                       </span>
                                     </label>
-                                    <label className="check-box m-3">
+                                    <label className="check-box two m-3 ">
                                       <input type="radio" name="radio-group1" />
-                                      <span className="radiomark outline-secondary"></span>
+                                      <span className="radiomark two outline-secondary"></span>
                                       <span className="text-secondary">
                                         Price: High to Low
                                       </span>
                                     </label>
-                                    <label className="check-box m-3">
+                                    <label className="check-box two m-3 ">
                                       <input type="radio" name="radio-group1" />
-                                      <span className="radiomark outline-secondary"></span>
+                                      <span className="radiomark two outline-secondary"></span>
                                       <span className="text-secondary">
                                         Name (A-Z)
                                       </span>
@@ -181,16 +226,13 @@ const Product = () => {
                                   data-bs-parent="#accordion-flush-sort-by"
                                 >
                                   <div>
-                                    <label className="check-box m-3">
-                                      <input type="radio" name="geo-group" />
-                                      <span className="radiomark outline-secondary"></span>
-                                      <span className="text-secondary">
-                                        India
-                                      </span>
-                                    </label>
-                                    <label className="check-box m-3">
-                                      <input type="radio" name="geo-group" />
-                                      <span className="radiomark outline-secondary"></span>
+                                    <label className="check-box two m-3 ">
+                                      <input
+                                        checked
+                                        type="radio"
+                                        name="geo-group"
+                                      />
+                                      <span className="radiomark two outline-secondary"></span>
                                       <span className="text-secondary">
                                         United States
                                       </span>
@@ -221,13 +263,13 @@ const Product = () => {
                                   data-bs-parent="#accordion-flush-sort-by"
                                 >
                                   <div>
-                                    <label className="check-box m-3">
+                                    <label className="check-box two m-3 ">
                                       <input
+                                        checked
                                         type="radio"
                                         name="store-group"
-                                        checked
                                       />
-                                      <span className="radiomark outline-secondary"></span>
+                                      <span className="radiomark two outline-secondary"></span>
                                       <span className="text-secondary">
                                         All Stores
                                       </span>
@@ -263,13 +305,13 @@ const Product = () => {
                                         <input type="checkbox" />
                                         <span className="checkmark outline-secondary ms-2"></span>
                                       </label>
-                                      <a
-                                        href="#"
+                                      <Link
+                                        to="#"
                                         className="f-s-15 f-w-500 text-secondary"
                                       >
                                         <i className="ph-duotone ph-dress text-dark f-s-18 me-2"></i>
                                         Appliances
-                                      </a>
+                                      </Link>
                                     </div>
 
                                     <div className="p-2 d-flex align-items-center gap-2">
@@ -277,13 +319,13 @@ const Product = () => {
                                         <input type="checkbox" />
                                         <span className="checkmark outline-secondary ms-2"></span>
                                       </label>
-                                      <a
-                                        href="#"
+                                      <Link
+                                        to="#"
                                         className="f-s-15 f-w-500 text-secondary"
                                       >
                                         <i className="ph-duotone ph-paint-brush text-dark f-s-18 me-2"></i>
                                         Arts, Crafts &amp; Sewing
-                                      </a>
+                                      </Link>
                                     </div>
 
                                     <div className="p-2 d-flex align-items-center gap-2">
@@ -291,13 +333,13 @@ const Product = () => {
                                         <input type="checkbox" />
                                         <span className="checkmark outline-secondary ms-2"></span>
                                       </label>
-                                      <a
-                                        href="#"
+                                      <Link
+                                        to="#"
                                         className="f-s-15 f-w-500 text-secondary"
                                       >
                                         <i className="ph-duotone ph-car text-dark f-s-18 me-2"></i>
                                         Automotive
-                                      </a>
+                                      </Link>
                                     </div>
 
                                     <div className="p-2 d-flex align-items-center gap-2">
@@ -305,13 +347,13 @@ const Product = () => {
                                         <input type="checkbox" />
                                         <span className="checkmark outline-secondary ms-2"></span>
                                       </label>
-                                      <a
-                                        href="#"
+                                      <Link
+                                        to="#"
                                         className="f-s-15 f-w-500 text-secondary"
                                       >
                                         <i className="ph-duotone ph-baby text-dark f-s-18 me-2"></i>
                                         Baby
-                                      </a>
+                                      </Link>
                                     </div>
 
                                     <div className="p-2 d-flex align-items-center gap-2">
@@ -568,7 +610,7 @@ const Product = () => {
               </CardBody>
             </Card>
           </Col>
-          <Col xxl={3} lg={12} className="inner_fiilter">
+          <Col xl={3} lg={3} className="inner_fiilter">
             <Card>
               <CardHeader>
                 <h5>Filters</h5>
@@ -599,7 +641,7 @@ const Product = () => {
                     >
                       <div>
                         <label className="check-box m-3">
-                          <input type="radio" name="radio-group1" />
+                          <input checked type="radio" name="radio-group1" />
                           <span className="radiomark outline-secondary"></span>
                           <span className="text-secondary">Best Sellers</span>
                         </label>
@@ -658,12 +700,7 @@ const Product = () => {
                     >
                       <div>
                         <label className="check-box m-3">
-                          <input type="radio" name="geo-group" />
-                          <span className="radiomark outline-secondary"></span>
-                          <span className="text-secondary">India</span>
-                        </label>
-                        <label className="check-box m-3">
-                          <input type="radio" name="geo-group" />
+                          <input checked type="radio" name="geo-group" />
                           <span className="radiomark outline-secondary"></span>
                           <span className="text-secondary">United States</span>
                         </label>
@@ -701,7 +738,7 @@ const Product = () => {
                   <div className="accordion-item">
                     <h2 className="accordion-header" id="flush-heading-three">
                       <button
-                        className="accordion-button bg-none p-1"
+                        className="accordion-button bg-none p-1 collapsed"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapse_three"
@@ -962,10 +999,10 @@ const Product = () => {
               </CardBody>
             </Card>
           </Col>
-          <Col xxl={9} lg={12}>
+          <Col xl={9} lg={9} className="full-on-slide">
             <div className="product-wrapper-grid">
               <Row className={isListView ? "list-view" : ""}>
-                {products.map((product) => (
+                {filteredProducts.map((product) => (
                   <Col key={product.id} className={layout}>
                     <Card className="overflow-hidden">
                       <CardBody className="p-0">
@@ -992,16 +1029,7 @@ const Product = () => {
                                   <p>ASIN: B01N1UX8RW</p>
                                 </span>
                               </a>
-                              <ul className="product-links">
-                                <li>
-                                  <Link
-                                    to="/apps/e-shop/product-details"
-                                    className="bg-success h-30 w-30 d-flex-center b-r-20"
-                                  >
-                                    <i className="ti ti-eye f-s-18 text-light"></i>
-                                  </Link>
-                                </li>
-                              </ul>
+                              
                             </div>
                           </div>
 
@@ -1010,14 +1038,14 @@ const Product = () => {
                             <div className="mb-2">
                               <Link
                                 to="/apps/e-shop/product-details"
-                                className="m-0 f-s-17 f-w-500"
+                                className="m-0 f-s-16 f-w-500"
                               >
                                 {product.title}
                               </Link>
                             </div>
 
                             {/* Rating Section */}
-                            <div className="product-rating mb-2">
+                            <div className="product-rating my-2">
                               <div>
                                 <span className="rating-score">
                                   {product.rating} ★
@@ -1029,7 +1057,7 @@ const Product = () => {
                               <div>
                                 {/* Store Info */}
                                 <div className="store-info">
-                                  <i className="ph ph-storefront me-2"></i>{" "}
+                                  <i className="ph ph-storefront me-0"></i>{" "}
                                   {product.store || "RENPHO"}
                                 </div>
                               </div>
@@ -1080,11 +1108,19 @@ const Product = () => {
                               </div>
                             </div>
 
-                            {/* Affiliate Button */}
-                            <button className="affiliate-btn">
-                              Generate Affiliate Link
-                              <i className="ti ti-external-link"></i>
-                            </button>
+                            {/* Action Buttons */}
+                            <div className="d-flex flex-column gap-2">
+                              {/* Preview Link Button */}
+                              <button className="preview-link-btn btn btn-outline-secondary btn-sm">
+                                <i className="ti ti-eye me-1"></i> Preview Link
+                              </button>
+                              
+                              {/* Affiliate Button */}
+                              <button className="affiliate-btn">
+                                Generate Tracking Link
+                                <i className="ti ti-external-link"></i>
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </CardBody>

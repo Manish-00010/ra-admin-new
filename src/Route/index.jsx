@@ -3,6 +3,7 @@ import {useRoutes} from "react-router-dom";
 import {
     DashboardRoutes,
     AppsRoutes,
+    IntegrationRoutes,
     BlankRoutes,
     IndependentRoutes,
     UiKitRoutes,
@@ -26,6 +27,13 @@ import AmazonBrands from '@/Pages/Amazon/Brands';
 import D2CBrands from '@/Pages/D2C/Brands';
 import MyLinks from '@/Pages/MyLinks';
 import D2CMyLinks from '@/Pages/D2C/MyLinks';
+import AmazonReports from '@/Pages/Amazon/Reports';
+import D2CReports from '@/Pages/D2C/Reports';
+import D2COrders from '@/Pages/D2C/Orders';
+import AmazonOrders from '@/Pages/Amazon/Orders';
+import D2CProductDetails from '@/Pages/D2C/ProductDetails';
+import AmazonProduct from '@/Pages/Amazon/Products';
+import AmazonProductDetails from '@/Pages/Amazon/ProductDetails';
 
 // DashboardRoutes
 const Ecommerce = React.lazy(() => import("@/Pages/Dashboard/Ecommerce"));
@@ -37,12 +45,18 @@ const Education = React.lazy(() => import("@/Pages/Dashboard/Education"));
 // // AppsRoutes
 const Calendar = React.lazy(() => import("@/Pages/Apps/Calendar"));
 const Profile = React.lazy(() => import("@/Pages/Apps/ProfilePage/Profile"));
+const ConsolidatedProfile = React.lazy(() => import("@/Pages/Apps/ProfilePage/ConsolidatedProfile"));
 const Settings = React.lazy(() => import("@/Pages/Apps/ProfilePage/Settings"));
 const Project = React.lazy(() => import("@/Pages/Apps/ProjectPage/Project"));
 const ProjectDetails = React.lazy(() => import("@/Pages/Apps/ProjectPage/ProjectDetails"));
 const ToDo = React.lazy(() => import("@/Pages/Apps/ToDo"));
 const Team = React.lazy(() => import("@/Pages/Apps/Team"));
 const API = React.lazy(() => import("@/Pages/Apps/API"));
+
+// Integration Routes
+const Postback = React.lazy(() => import("@/Pages/Integration/Postback"));
+const Facebook = React.lazy(() => import("@/Pages/Integration/Facebook"));
+const GoogleAds = React.lazy(() => import("@/Pages/Integration/GoogleAds"));
 const Ticket = React.lazy(() => import("@/Pages/Apps/TicketPage/Ticket"));
 const TicketDetails = React.lazy(() => import("@/Pages/Apps/TicketPage/TicketDetails"));
 const EmailPage = React.lazy(() => import("@/Pages/Apps/EmailsPage/EmailPage"));
@@ -239,8 +253,8 @@ const Routes = () => {
                 { path: "/D2C/Brands", element: <D2CBrands/> },
                 { path: "/Amazon/MyLinks", element: <MyLinks/> }, // My Product Links page
                 { path: "/D2C/MyLinks", element: <D2CMyLinks/> }, // D2C My Product Links page
-                { path: "/Amazon/Orders", element: <Orders/> }, // apps/e-shop/orders
-                { path: "/Amazon/Reports", element: <DataTable/> }, // table/data-table
+                { path: "/Amazon/Orders", element: <AmazonOrders/> }, // Amazon Orders page
+                { path: "/Amazon/Reports", element: <AmazonReports/> }, // Amazon Reports page
                 { path: "/profile/view", element: <Settings/> },
                 { path: "/profile/change-password", element: <Profile/> },
                 // Optionally, add a placeholder for logout
@@ -259,6 +273,8 @@ const Routes = () => {
                 // // AppsRoutes
                 {path: AppsRoutes.CALENDAR_PAGE, element: <Calendar/>},
                 {path: AppsRoutes.PROFILE_PAGE, element: <Profile/>},
+                {path: "/profile", element: <Profile/>}, // Alias for profile page
+                {path: "/profile-consolidated", element: <ConsolidatedProfile/>}, // New consolidated profile page
                 {path: AppsRoutes. SETTING_PAGE, element: <Settings/>},
                 {path: AppsRoutes.PROJECTS_PAGE, element: <Project/>},
                 {path: AppsRoutes.PROJECTS_DETAILS_PAGE, element: <ProjectDetails/>},
@@ -289,6 +305,11 @@ const Routes = () => {
                 {path: AppsRoutes.BLOG_PAGE, element: <Blog/>},
                 {path: AppsRoutes.BLOG_DETAILS_PAGE, element: <BlogDetails/>},
                 {path: AppsRoutes.Add_BLOG_PAGE, element: <AddBlog/>},
+
+                // Integration Routes
+                {path: IntegrationRoutes.POSTBACK_PAGE, element: <Postback/>},
+                {path: IntegrationRoutes.FACEBOOK_PAGE, element: <Facebook/>},
+                {path: IntegrationRoutes.GOOGLE_ADS_PAGE, element: <GoogleAds/>},
                 {path: AppsRoutes.TICKET_PAGE, element: <Ticket/>},
                 {path: AppsRoutes.TICKET_DETAILS_PAGE, element: <TicketDetails/>},
 
@@ -429,8 +450,13 @@ const Routes = () => {
                 // D2C Ecom menu routes (mirroring Amazon, but with /D2C/ prefix)
                 { path: "/D2C/Dashboard", element: <D2CDashboard/> },
                 { path: "/D2C/Products", element: <D2CProduct/> },
-                { path: "/D2C/Orders", element: <Orders/> },
-                { path: "/D2C/Reports", element: <DataTable/> }, // table/data-table
+                { path: "/D2C/Products/:id", element: <D2CProductDetails/> },
+                { path: "/D2C/Orders", element: <D2COrders/> }, // D2C Orders page
+                { path: "/D2C/Reports", element: <D2CReports/> }, // D2C Reports page
+
+                // Amazon Ecom menu routes
+                { path: "/Amazon/Products", element: <AmazonProduct/> },
+                { path: "/Amazon/Products/:id", element: <AmazonProductDetails/> },
 
             ]
         },

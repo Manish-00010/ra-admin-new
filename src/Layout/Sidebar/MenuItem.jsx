@@ -6,7 +6,16 @@ const MenuItem = (props) => {
     const {pathname} = useLocation();
 
     const isActive = useMemo(() => {
-        return (linkPath) => linkPath === pathname
+        return (linkPath) => {
+            // Exact match
+            if (linkPath === pathname) return true;
+            
+            // Handle dynamic routes for D2C and Amazon product details
+            if (linkPath === "/D2C/Products" && pathname.startsWith("/D2C/ProductDetails")) return true;
+            if (linkPath === "/Amazon/Products" && pathname.startsWith("/Amazon/ProductDetails")) return true;
+            
+            return false;
+        }
     }, [pathname]);
 
     const checkUnder = (links) => {

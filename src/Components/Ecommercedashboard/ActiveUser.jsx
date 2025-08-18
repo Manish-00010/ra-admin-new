@@ -79,7 +79,7 @@ const ActiveUser = () => {
                             <div id="productSold"></div>
                             <Chart options={productSoldChartData} series={productSoldChartData.series} type="bubble" height={220}/>
                             <div>
-                                <Link to="/apps/e-shop/product-details" role="button"
+                                <Link to="/Amazon/Products/1" role="button"
                                    className="btn btn-success w-100">Details</Link>
                             </div>
                         </div>

@@ -1,7 +1,7 @@
 export const products = [
       {
         id: 1,
-        title: "RENPHO Smart Scale for Body Weight, Digital Bathroom Scale B...",
+        title: "RENPHO Smart Scale for Body Weight, Digital...",
         description: "Smart digital scale with body composition analysis",
         price: 34.99,
         originalPrice: 39.99,
@@ -9,10 +9,11 @@ export const products = [
         rating: 4.7,
         image1: "/assets/images/ecommerce/09.jpg",
         image2: "/assets/images/ecommerce/10.jpg",
+        category: "Shoes & Jewelry",
     },
     {
         id: 2,
-        title: "Glocusent Book Light, 3-Color & 6-Brightness Reading Light, ...",
+        title: "Glocusent Book Light, 3-Color & 6-Brightness Readin...",
         description: "Rechargeable reading light with adjustable colors",
         price: 21.99,
         originalPrice: 27.99,
@@ -20,10 +21,11 @@ export const products = [
         rating: 4.6,
         image1: "/assets/images/ecommerce/13.jpg",
         image2: "/assets/images/ecommerce/14.jpg",
+        category: "Electronics",
     },
     {
         id: 3,
-        title: "GENIANI XL Heating Pad for Back Pain & Cramps Relief, FSA HS...",
+        title: "GENIANI XL Heating Pad for Back Pain & Cramps...",
         description: "Extra large heating pad for pain relief",
         price: 39.96,
         originalPrice: 49.99,
@@ -31,10 +33,11 @@ export const products = [
         rating: 4.9,
         image1: "/assets/images/ecommerce/11.jpg",
         image2: "/assets/images/ecommerce/12.jpg",
+        category: "Shoes",
     },
     {
         id: 4,
-        title: "Zyllion Shiatsu Back and Neck Massager with Heat - 3D Kneadi...",
+        title: "Zyllion Shiatsu Back and Neck Massager with...",
         description: "3D kneading massage pillow with heat therapy",
         price: 74.95,
         originalPrice: 89.99,
@@ -42,10 +45,11 @@ export const products = [
         rating: 4.7,
         image1: "/assets/images/ecommerce/15.jpg",
         image2: "/assets/images/ecommerce/16.jpg",
+        category: "Clothing",
     },
     {
         id: 6,
-        title: "Glocusent Book Light, 3-Color & 6-Brightness Reading Light, ...",
+        title: "Glocusent Book Light, 3-Color & 6-Brightness Reading...",
         description: "Portable LED reading light with clip design",
         price: 21.99,
         originalPrice: 25.99,
@@ -53,10 +57,12 @@ export const products = [
         rating: 4.6,
         image1: "/assets/images/ecommerce/05.jpg",
         image2: "/assets/images/ecommerce/06.jpg",
+        category: "Clothing",
+
     },
     {
         id: 7,
-        title: "RENPHO Smart Scale for Body Weight, Digital Bathroom Scale B...",
+        title: "RENPHO Smart Scale for Body Weight, Digital...",
         description: "Bluetooth body fat scale with smartphone app",
         price: 34.99,
         originalPrice: 44.99,
@@ -64,5 +70,7 @@ export const products = [
         rating: 4.7,
         image1: "/assets/images/ecommerce/04.jpg",
         image2: "/assets/images/ecommerce/03.jpg",
+        category: "Clothing",
+
     },
 ];

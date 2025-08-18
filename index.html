@@ -2,18 +2,14 @@
 <html lang="en">
 
 <head>
+  <base href="/">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Multipurpose, super flexible, powerful, clean modern responsive bootstrap 5 admin template">
-  <meta name="keywords"
-    content="admin template, RA-ADMIN admin template, dashboard template, flat admin template, responsive admin template, web app">
-  <meta name="author" content="Arteam">
   <link rel="icon" href="/assets/images/logo/favicon.png" type="image/x-icon">
   <link rel="shortcut icon" href="/assets/images/logo/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <title>RA-ADMIN - Premium Admin Template</title>
+  <title>vCommission</title>
 
   <!--font-awesome-css-->
   <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.css">
@@ -95,10 +91,15 @@
 
   <!-- tree-view css  -->
   <link rel="stylesheet" href="/assets/vendor/jstree/style.min.css">
-
+  <style>
+    .default {
+      --primary: 127, 180, 20 !important;
+      --secondary: 82, 80, 80 !important;
+    }
+  </style>
 </head>
 
-<body class="ltr non-active">
+<body class="ltr">
   <div id="root"></div>
 
 
@@ -206,8 +207,6 @@
   <!-- Trumbowyg js -->
   <script src="/assets/vendor/trumbowyg/trumbowyg.min.js"></script>
 
-
-
   <script>
     const title = document.title;
     window.addEventListener('focus', function () {
@@ -221,19 +220,64 @@
 
   <script>
     $(document).ready(function () {
-      console.log("Document is ready!");
       $(document).on("click", "#dropdownToggle", function () {
-      $("#dropdownMenu").toggleClass("show");
+        $("#dropdownMenu").toggleClass("show");
       });
     });
 
+    // Enhanced function to add and maintain active class on body
+    function addActiveClassToBody() {
+      const body = document.body;
+      
+      // Add active class immediately
+      body.classList.add("active");
+      
+      // Ensure the class stays active
+      const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+            if (!body.classList.contains('active')) {
+              body.classList.add('active');
+            }
+          }
+        });
+      });
+      
+      // Start observing
+      observer.observe(body, {
+        attributes: true,
+        attributeFilter: ['class']
+      });
+      
+      // Also add it periodically as a safety measure
+      setInterval(function() {
+        if (!body.classList.contains('active')) {
+          body.classList.add('active');
+        }
+      }, 1000);
+    }
+
+    // Multiple ways to ensure the active class is added
+    document.addEventListener('DOMContentLoaded', addActiveClassToBody);
+    
     $(document).ready(function () {
-   
-      $(document).on("click", ".header-toggle", function () {
-      $("body").toggleClass("active");
-      });
+      addActiveClassToBody();
     });
-
+    
+    window.addEventListener('load', addActiveClassToBody);
+    
+    // Force add on React route changes (for SPA)
+    if (window.history && window.history.pushState) {
+      const originalPushState = window.history.pushState;
+      window.history.pushState = function() {
+        originalPushState.apply(window.history, arguments);
+        setTimeout(addActiveClassToBody, 100);
+      };
+      
+      window.addEventListener('popstate', function() {
+        setTimeout(addActiveClassToBody, 100);
+      });
+    }
   </script>
 </body>
 

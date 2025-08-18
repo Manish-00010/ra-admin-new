@@ -1,0 +1,59 @@
+// Loading Spinner Styles
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+}
+
+.loading-content {
+  text-align: center;
+}
+
+.loading-spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.spinner-sm {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.spinner-md {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.spinner-lg {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+// Dark mode support
+[data-theme="dark"] .loading-overlay {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+// Animation for smooth appearance
+.loading-overlay {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

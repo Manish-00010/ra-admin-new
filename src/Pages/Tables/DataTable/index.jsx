@@ -14,6 +14,7 @@ import {
   TabPane,
 } from "reactstrap";
 import classnames from "classnames";
+import { Link } from "react-router-dom";
 import DefaultDatatable from "../../../Components/Datatable/DefaultDatatable";
 import BorderedDatatable from "../../../Components/Datatable/BorderedDatatable";
 import ButtonsDatatable from "../../../Components/Datatable/ButtonsDatatable";
@@ -56,18 +57,20 @@ const DataTable = () => {
           return `<div class="p-3"><strong>Full info:</strong> ${d.name} - ${d.position}</div>`;
         }
 
-        $("#example4 tbody").off("click").on("click", "td.dt-control", function () {
-          const tr = $(this).closest("tr");
-          const row = table.row(tr);
+        $("#example4 tbody")
+          .off("click")
+          .on("click", "td.dt-control", function () {
+            const tr = $(this).closest("tr");
+            const row = table.row(tr);
 
-          if (row.child.isShown()) {
-            row.child.hide();
-            tr.removeClass("shown");
-          } else {
-            row.child(format(row.data())).show();
-            tr.addClass("shown");
-          }
-        });
+            if (row.child.isShown()) {
+              row.child.hide();
+              tr.removeClass("shown");
+            } else {
+              row.child(format(row.data())).show();
+              tr.addClass("shown");
+            }
+          });
 
         table.on("stateLoaded", (e, settings, data) => {
           data.childRows.forEach((rowId) => {
@@ -86,14 +89,12 @@ const DataTable = () => {
           <h4 className="main-title">Reports</h4>
           <ul className="app-line-breadcrumbs mb-3">
             <li>
-              <a href="#" className="f-s-14 f-w-500">
-              <i className="ph-duotone ph-house"></i>
-              </a>
+              <Link to="/Amazon/Dashboard" className="f-s-14 f-w-500">
+                Dashboard
+              </Link>
             </li>
             <li className="active">
-              <a href="#" className="f-s-14 f-w-500">
                 Reports
-              </a>
             </li>
           </ul>
         </Col>
@@ -108,7 +109,7 @@ const DataTable = () => {
                 onClick={() => toggle("1")}
                 style={{ cursor: "pointer" }}
               >
-                Performance 
+                Performance
               </NavLink>
             </NavItem>
             <NavItem>
@@ -129,7 +130,8 @@ const DataTable = () => {
                     <CardHeader>
                       <h5>Performance Datatable</h5>
                       <p>
-                        Use <code>$().DataTable()</code> to initialize the table.
+                        Use <code>$().DataTable()</code> to initialize the
+                        table.
                       </p>
                     </CardHeader>
                     <CardBody className="p-0">
@@ -168,7 +170,8 @@ const DataTable = () => {
                     <CardHeader>
                       <h5>Row Created Callback Example</h5>
                       <p>
-                        Example of using a callback to manipulate rows post-creation.
+                        Example of using a callback to manipulate rows
+                        post-creation.
                       </p>
                     </CardHeader>
                     <CardBody className="p-0">
@@ -188,8 +191,8 @@ const DataTable = () => {
                   </p>
                 </CardHeader>
                 <CardBody className="p-0">
-                      <BorderedDatatable />
-                    </CardBody>
+                  <BorderedDatatable />
+                </CardBody>
               </Card>
             </TabPane>
           </TabContent>

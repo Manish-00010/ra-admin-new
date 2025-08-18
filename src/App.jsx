@@ -8,14 +8,22 @@ import "./scss/style.scss";
 import "./scss/responsive.scss";
 import Loader from "./Components/Loader";
 import Filter from "./Components/Filter/Filter";
+import ErrorBoundary from "./Components/Common/ErrorBoundary";
+import useActiveBody from "./hooks/useActiveBody";
+import "./utils/bodyActiveManager"; // Import to initialize the body active manager
 
 function App() {
+    // Use the custom hook to ensure body always has active class
+    useActiveBody();
+    
     return (
-        <Suspense fallback={<Loader/>}>
-            <BrowserRouter basename="/">
-                <Routes/>
-            </BrowserRouter>
-        </Suspense>
+        <ErrorBoundary>
+            <Suspense fallback={<Loader/>}>
+                <BrowserRouter basename="/">
+                    <Routes/>
+                </BrowserRouter>
+            </Suspense>
+        </ErrorBoundary>
     )
 }
 

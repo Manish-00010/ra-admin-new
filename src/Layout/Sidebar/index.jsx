@@ -5,9 +5,9 @@ import { sidebarConfig } from "../../Data/Sidebar/sidebar";
 
 const Sidebar = ({sidebarOpen, setIsSidebarOpen}) => {
     return (
-        <nav className={`vertical-sidebar ${sidebarOpen ? "" : "semi-nav"}`}>
+        <nav className={`vertical-sidebar ${!sidebarOpen ? "semi-nav" : ""}`}>
             <div className="app-logo">
-                <Link className="logo d-inline-block" to="/dashboard/ecommerce">
+                <Link className="logo d-inline-block" to="/Amazon/Dashboard">
                     {/* <img src="/assets/images/logo/ra-white.png" alt="#" className="light-logo"/> */}
                     <img src="/assets/images/logo/1.png" alt="#" className="dark-logo one"/>
                     <img src="/assets/images/logo/logo2.png" alt="#" className="dark-logo two"/>
@@ -28,10 +28,7 @@ const Sidebar = ({sidebarOpen, setIsSidebarOpen}) => {
                     ))}
                 </ul>
             </Scrollbar>
-            <div className="menu-navs">
-                <span className="menu-previous"><i className="ti ti-chevron-left"/></span>
-                <span className="menu-next"><i className="ti ti-chevron-right"></i></span>
-            </div>
+
         </nav>
     );
 };

@@ -49,6 +49,12 @@ const AppsRoutes = {
 
 }
 
+const IntegrationRoutes = {
+    POSTBACK_PAGE: "/Integration/Postback",
+    FACEBOOK_PAGE: "/Integration/Facebook", 
+    GOOGLE_ADS_PAGE: "/Integration/GoogleAds",
+}
+
 const UiKitRoutes = {
     CHEATSHEET_PAGE:"/ui-kits/cheatsheet",
     ALERT_PAGE:"/ui-kits/alert",
@@ -214,6 +220,7 @@ const ReadyUseRoutes = {
 export {
     DashboardRoutes,
     AppsRoutes,
+    IntegrationRoutes,
     BlankRoutes,
     IndependentRoutes,
     UiKitRoutes,

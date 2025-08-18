@@ -12,7 +12,7 @@ const D2CDashboard = () => {
         <div className="row mb-4">
           <div className="col-12">
             <div className="d-flex justify-content-between align-items-center">
-              <h4 className="main-title">D2C Dashboard</h4>
+              <h4 className="main-title">D2C Ecom Dashboard</h4>
             </div>
           </div>
         </div>

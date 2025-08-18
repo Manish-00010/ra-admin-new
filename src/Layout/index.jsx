@@ -7,16 +7,49 @@ import {useEffect, useState} from "react";
 import Customizer from "./Customizer";
 
 const Layout = () => {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Default to true for open sidebar
+    
     useEffect(() => {
+        // Always add active class to body on component mount
+        document.body.classList.add('active');
+        
         if (window.location.pathname === "/dashboard/ecommerce") {
             $(function () {
                 $('#welcomeCard').modal('show');
             });
         }
     }, []);
+
+    // Update body class when sidebar state changes
+    useEffect(() => {
+        // Always ensure active class is present regardless of sidebar state
+        document.body.classList.add('active');
+        
+        if (isSidebarOpen) {
+            // Sidebar is open, you can add additional classes if needed
+            document.body.classList.add('sidebar-open');
+        } else {
+            // Sidebar is closed, remove sidebar-specific class but keep active
+            document.body.classList.remove('sidebar-open');
+        }
+    }, [isSidebarOpen]);
+
+    // Handle click anywhere on the page to manage sidebar state
+    const handlePageClick = (e) => {
+        // Check if the click is not on the sidebar or toggle button
+        const sidebar = e.target.closest('.vertical-sidebar');
+        const toggleButton = e.target.closest('.toggle-semi-nav');
+        const headerToggle = e.target.closest('.header-toggle');
+        
+        if (!sidebar && !toggleButton && !headerToggle) {
+            // On mobile devices (max width 500px), close sidebar when clicking outside
+            if (window.innerWidth <= 500 && isSidebarOpen) {
+                setIsSidebarOpen(false); // This will close the sidebar on mobile
+            }
+        }
+    };
     return (
-        <div className="app-wrapper default">
+        <div className="app-wrapper default" onClick={handlePageClick}>
 
          <div className="modal" tabIndex="-1" id="welcomeCard" data-bs-backdrop="static">
     <div className="modal-dialog modal-dialog-centered">

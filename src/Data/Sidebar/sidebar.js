@@ -1,5 +1,6 @@
 import {
     AppsRoutes,
+    IntegrationRoutes,
     BlankRoutes,
     DashboardRoutes,
     IndependentRoutes,
@@ -49,6 +50,19 @@ export const sidebarConfig = [
       { name: "My Links", path: "/D2C/MyLinks", iconClass: "ph-duotone ph-link" },
       { name: "Orders", path: "/D2C/Orders", iconClass: "ph-duotone ph-shopping-cart" },
       { name: "Reports", path: "/D2C/Reports", iconClass: "ph-duotone ph-chart-bar" },
+    ],
+  },
+  {
+    type: "dropdown",
+    title: "Integration",
+    iconClass: "integration-icon",
+    name: "integration",
+    collapseId: "integration",
+    path: "/Integration",
+    children: [
+      { name: "Postback", path: IntegrationRoutes.POSTBACK_PAGE, iconClass: "ph-duotone ph-arrow-u-up-left" },
+      { name: "Facebook", path: IntegrationRoutes.FACEBOOK_PAGE, iconClass: "ph-duotone ph-facebook-logo" },
+      { name: "Google Ads", path: IntegrationRoutes.GOOGLE_ADS_PAGE, iconClass: "ph-duotone ph-google-logo" },
     ],
   },
 ];

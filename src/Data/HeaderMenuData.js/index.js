@@ -59,6 +59,15 @@ export const initialCartItems  = [
 export const initialnotifications = [
     {
         id: 1,
+        type: 'amazon-links',
+        imageSrc: '/assets/images/ai_avtar/6.jpg',
+        title: 'Amazon Links Update',
+        message: 'New Amazon affiliate links have been added to your dashboard',
+        date: 'just now',
+        isNew: true,
+    },
+    {
+        id: 2,
         type: 'message',
         imageSrc: '/assets/images/ai_avtar/6.jpg',
         title: 'Gene Hart',
@@ -67,7 +76,7 @@ export const initialnotifications = [
         isNew: true,
     },
     {
-        id: 2,
+        id: 3,
         type: 'order',
         imageSrc: null,
         title: 'Emery McKenzie',
@@ -76,7 +85,7 @@ export const initialnotifications = [
         isNew: true,
     },
     {
-        id: 3,
+        id: 4,
         type: 'file',
         imageSrc: '/assets/images/ai_avtar/2.jpg',
         title: 'Simon Young',
@@ -85,7 +94,7 @@ export const initialnotifications = [
         isNew: false,
     },
     {
-        id: 4,
+        id: 5,
         type: 'comment',
         imageSrc: '/assets/images/ai_avtar/5.jpg',
         title: 'Becky G. Hayes',
@@ -94,7 +103,7 @@ export const initialnotifications = [
         isNew: false,
     },
     {
-        id: 5,
+        id: 6,
         type: 'meeting',
         imageSrc: '/assets/images/ai_avtar/1.jpg',
         title: 'Romaine Nadeau',
