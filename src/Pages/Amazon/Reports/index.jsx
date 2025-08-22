@@ -96,6 +96,7 @@ const AmazonReports = () => {
     date: "02/12/2024",
     affiliate: "Amazon India",
     clicks: 24,
+    dpv: "0",
     addToCart: 6,
     sales: 3,
     saleAmount: "₹8,499.00",
@@ -103,6 +104,7 @@ const AmazonReports = () => {
     payout: "₹254.97",
     payoutPerClick: "₹10.62",
     revenue: "₹8,499.00",
+    rpc: "0",
     profit: "₹254.97"
   });
 
@@ -376,7 +378,7 @@ const AmazonReports = () => {
                           </div>
                           
                           <div className="date-range-dropdown-body">
-                            <div className="date-range-presets">
+                            <div className="date-range-presets mb-0">
                               {['Today', 'Yesterday', 'Last 7 Days', 'Last 30 Days', 'This Month', 'Last Month'].map((preset) => (
                                 <button
                                   key={preset}
@@ -455,6 +457,7 @@ const AmazonReports = () => {
                         <th>Date</th>
                         <th>Affiliate</th>
                         <th>Clicks</th>
+                        <th>DPV</th>
                         <th>Add to Cart</th>
                         <th>Sales</th>
                         <th>Sale Amount</th>
@@ -462,6 +465,7 @@ const AmazonReports = () => {
                         <th>Payout</th>
                         <th>EPC</th>
                         <th>Revenue</th>
+                        <th>RPC</th>
                         <th>Profit</th>
                       </tr>
                     </thead>
@@ -478,6 +482,7 @@ const AmazonReports = () => {
                             </Link>
                           </td>
                           <td>{item.clicks}</td>
+                          <td>{item.dpv}</td>
                           <td>{item.addToCart}</td>
                           <td>{item.sales}</td>
                           <td className="fw-semibold">{item.saleAmount}</td>
@@ -485,6 +490,7 @@ const AmazonReports = () => {
                           <td className="fw-semibold text-success">{item.payout}</td>
                           <td>{item.payoutPerClick}</td>
                           <td className="fw-semibold">{item.revenue}</td>
+                          <td>{item.rpc}</td>
                           <td className="profit-positive">{item.profit}</td>
                         </tr>
                       ))}
@@ -602,15 +608,15 @@ const AmazonReports = () => {
                   />
                 </div>
 
-                {/* Store ID */}
+                {/* Brand ID */}
                 <div className="mb-4">
                   <label className="form-label fw-semibold mb-2">
-                    Store ID
+                    Brand ID
                   </label>
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="Enter Store ID"
+                    placeholder="Enter Brand ID"
                     value={filters.storeId}
                     onChange={(e) => handleFilterChange('storeId', e.target.value)}
                   />

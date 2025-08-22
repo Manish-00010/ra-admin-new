@@ -18,7 +18,11 @@ const AmazonOrders = () => {
     subId: "",
     asin: "",
     linkName: "",
-    storeId: ""
+    storeId: "",
+    affiliateId: "",
+    source: "",
+    advertiser: "",
+    brandId: ""
   });
 
   const handleFilterChange = (field, value) => {
@@ -89,10 +93,15 @@ const AmazonOrders = () => {
       date: "2025-07-23",
       productName: "XbotGo Chameleon AI Powered Sports Action Camera, Sports Gimbal Tracking System with Team and Player Tracking, COMS 4K Video, 360° Rotation, 120° FOV, Live Streaming (Lava Graphite)",
       asin: "B0D7HQFKPB",
+      affiliateId: "AFF102602",
+      source: "levanta",
+      advertiser: "",
+      brandId: "306",
       subId: "No Sub ID",
       linkName: "AFF101928_API_XbotGo Chameleon",
       storeName: "Xbot Go",
       clicks: 22,
+      dpv: "0",
       addToCart: 0,
       sales: 0,
       saleAmount: "0",
@@ -100,16 +109,22 @@ const AmazonOrders = () => {
       payout: "0",
       payoutPerClick: "0",
       revenue: "0",
+      rpc: "0",
       profit: "0",
     },
     {
       date: "2025-07-23",
       productName: "Waterdrop G3P800 Reverse Osmosis System, 800 GPD Fast Flow, NSF/ANSI 42 & 53 & 58 & 372 Certified, 3:1 Pure to Drain, Tankless Under Sink RO Water Filter System, LED Purifier, Smart Faucet",
       asin: "B0987FCQQW",
+      affiliateId: "AFF102602",
+      source: "direct",
+      advertiser: "HILLFAIR",
+      brandId: "306",
       subId: "waterdrop",
       linkName: "AFF102602_API_amitG3P800",
       storeName: "Waterdrop",
       clicks: 302,
+      dpv: "0",
       addToCart: 0,
       sales: 5,
       saleAmount: "617.96",
@@ -117,16 +132,22 @@ const AmazonOrders = () => {
       payout: "55.62",
       payoutPerClick: "0.18",
       revenue: "74.16",
+      rpc: "0",
       profit: "18.54",
     },
     {
       date: "2025-07-23",
       productName: "iRestore Professional Laser Hair System - FDA Cleared Hair Growth Cap for Men and Women with Thinning Hair or Hair Loss",
       asin: "B09JB3JKDY",
+      affiliateId: "AFF102602",
+      source: "levanta",
+      advertiser: "",
+      brandId: "306",
       subId: "No Sub ID",
       linkName: "AFF101928_API_iRestore Professional Laser Hair System",
       storeName: "iRestore",
       clicks: 9,
+      dpv: "0",
       addToCart: 0,
       sales: 0,
       saleAmount: "0",
@@ -134,16 +155,22 @@ const AmazonOrders = () => {
       payout: "0",
       payoutPerClick: "0",
       revenue: "0",
+      rpc: "0",
       profit: "0",
     },
     {
       date: "2025-07-23",
       productName: "iRestore Elite + Rechargeable Battery Pack - Laser Red Light Therapy for Hair Growth - FDA Cleared Hair Loss, Hair Thinning Treatment for Men & Women - Hair Regrowth Laser Cap - 500 Lasers & LEDs",
       asin: "B0CW4CLF2X",
+      affiliateId: "AFF102602",
+      source: "direct",
+      advertiser: "HILLFAIR",
+      brandId: "306",
       subId: "No Sub ID",
       linkName: "AFF101928_API_iRestore Laser Cap",
       storeName: "iRestore",
       clicks: 61,
+      dpv: "0",
       addToCart: 0,
       sales: 0,
       saleAmount: "0",
@@ -151,16 +178,22 @@ const AmazonOrders = () => {
       payout: "0",
       payoutPerClick: "0",
       revenue: "0",
+      rpc: "0",
       profit: "0",
     },
     {
       date: "2025-07-23",
       productName: "Glocusent Book Light, 3-Color & 6-Brightness Reading Light, Bendable Neck Light, Long Lasting Rechargeable Lamp, Perfect Book Light for Reading in Bed, Knitting, Camping, Repairing, Book Lovers Gifts",
       asin: "B0B2J9D4PZ",
+      affiliateId: "AFF102602",
+      source: "levanta",
+      advertiser: "",
+      brandId: "306",
       subId: "amit",
       linkName: "AFF102602_API_glucosent",
       storeName: "Glocusent",
       clicks: 3,
+      dpv: "0",
       addToCart: 0,
       sales: 4,
       saleAmount: "61.5",
@@ -168,16 +201,22 @@ const AmazonOrders = () => {
       payout: "9.69",
       payoutPerClick: "3.23",
       revenue: "12.91",
+      rpc: "0",
       profit: "3.23",
     },
     {
       date: "2025-07-23",
       productName: "Holy Stone HS700E 4K UHD Drone with EIS Anti Shake 130 FOV Camera for Adults, GPS Quadcopter with 5GHz FPV Transmission, Brushless Motor, Easy Auto Return Home, Follow Me and Outdoor Carrying Case",
       asin: "B085HGMW9D",
+      affiliateId: "AFF102602",
+      source: "direct",
+      advertiser: "HILLFAIR",
+      brandId: "306",
       subId: "No Sub ID",
       linkName: "AFF101928_API_Holy Stone HS700E 4K UHD Drone",
       storeName: "Holy Stone",
       clicks: 13,
+      dpv: "0",
       addToCart: 0,
       sales: 0,
       saleAmount: "0",
@@ -185,16 +224,22 @@ const AmazonOrders = () => {
       payout: "0",
       payoutPerClick: "0",
       revenue: "0",
+      rpc: "0",
       profit: "0",
     },
     {
       date: "2025-07-23",
       productName: "LifePro Rumblex 4D Vibration Plate Exercise Machine - Triple Motor Oscillation, Linear, Pulsation + 3D/4D Vibration Platform - Whole Body Viberation Machine for Home, Weight Loss & Shaping. (Black)",
       asin: "B0CP6X63TF",
+      affiliateId: "AFF102602",
+      source: "levanta",
+      advertiser: "",
+      brandId: "306",
       subId: "No Sub ID",
       linkName: "AFF101928_API_LifePro Rumblex 4D Vibration Plate Exercise Machine",
       storeName: "LifePro",
       clicks: 4,
+      dpv: "0",
       addToCart: 0,
       sales: 0,
       saleAmount: "0",
@@ -202,16 +247,22 @@ const AmazonOrders = () => {
       payout: "0",
       payoutPerClick: "0",
       revenue: "0",
+      rpc: "0",
       profit: "0",
     },
     {
       date: "2025-07-23",
       productName: "MIKO Shiatsu Foot Massager Machine Deep Tissue Massage Improves Circulation, Blood flow with Deep Kneading, Heat Therapy - Plantar Fasciitis, Neuropathy, Diabetics Fits Up to Size15",
       asin: "B0849K4FHJ",
+      affiliateId: "AFF102602",
+      source: "direct",
+      advertiser: "HILLFAIR",
+      brandId: "306",
       subId: "amitMIKO",
       linkName: "AFF102602_API_MikoFootMassager",
       storeName: "MIKO",
       clicks: 340,
+      dpv: "0",
       addToCart: 0,
       sales: 5,
       saleAmount: "989.95",
@@ -219,16 +270,22 @@ const AmazonOrders = () => {
       payout: "89.1",
       payoutPerClick: "0.26",
       revenue: "118.79",
+      rpc: "0",
       profit: "29.7",
     },
     {
       date: "2025-07-23",
       productName: "Waterdrop X16-Alkaline Tankless Reverse Osmosis System, NSF/ANSI 42&58&372 Certified, 1600 GPD RO Filter System, 11-Stage Filtration, UnderSink, 3:1 Pure to Drain, Alkaline Mineral pH+, BPA Free",
       asin: "B0C7GDB77V",
+      affiliateId: "AFF102602",
+      source: "levanta",
+      advertiser: "",
+      brandId: "306",
       subId: "No Sub ID",
       linkName: "AFF101928_API_Waterdrop X16-Alkaline",
       storeName: "Waterdrop",
       clicks: 40,
+      dpv: "0",
       addToCart: 0,
       sales: 0,
       saleAmount: "0",
@@ -236,6 +293,7 @@ const AmazonOrders = () => {
       payout: "0",
       payoutPerClick: "0",
       revenue: "0",
+      rpc: "0",
       profit: "0",
     },
   ];
@@ -516,7 +574,7 @@ const AmazonOrders = () => {
                           </div>
                           
                           <div className="date-range-dropdown-body">
-                            <div className="date-range-presets">
+                            <div className="date-range-presets mb-0">
                               {['Today', 'Yesterday', 'Last 7 Days', 'Last 30 Days', 'This Month', 'Last Month'].map((preset) => (
                                 <button
                                   key={preset}
@@ -595,10 +653,15 @@ const AmazonOrders = () => {
                         <th>Date</th>
                         <th>Product Name</th>
                         <th>ASIN</th>
+                        <th>Affiliate ID</th>
+                        <th>Source</th>
+                        <th>Advertiser</th>
+                        <th>Brand ID</th>
                         <th>Sub ID</th>
                         <th>Link Name</th>
-                        <th>Store Name</th>
+                        <th>Brand Name</th>
                         <th>Clicks</th>
+                        <th>DPV</th>
                         <th>Add to Cart</th>
                         <th>Sales</th>
                         <th>Sale Amount</th>
@@ -606,6 +669,7 @@ const AmazonOrders = () => {
                         <th>Payout</th>
                         <th>EPC</th>
                         <th>Revenue</th>
+                        <th>RPC</th>
                         <th>Profit</th>
                       </tr>
                     </thead>
@@ -619,6 +683,10 @@ const AmazonOrders = () => {
                             </div>
                           </td>
                           <td>{row.asin}</td>
+                          <td>{row.affiliateId}</td>
+                          <td>{row.source}</td>
+                          <td>{row.advertiser}</td>
+                          <td>{row.brandId}</td>
                           <td>{row.subId}</td>
                           <td>
                             <div className="text-truncate" style={{ maxWidth: "150px" }} title={row.linkName}>
@@ -627,6 +695,7 @@ const AmazonOrders = () => {
                           </td>
                           <td>{row.storeName}</td>
                           <td>{row.clicks.toLocaleString()}</td>
+                          <td>{row.dpv}</td>
                           <td>{row.addToCart}</td>
                           <td>{row.sales}</td>
                           <td className="fw-semibold">${row.saleAmount}</td>
@@ -634,6 +703,7 @@ const AmazonOrders = () => {
                           <td className="fw-semibold text-success">${row.payout}</td>
                           <td>${row.payoutPerClick}</td>
                           <td className="fw-semibold">${row.revenue}</td>
+                          <td>${row.rpc}</td>
                           <td className={row.profit === "0" ? "text-muted" : "profit-positive"}>${row.profit}</td>
                         </tr>
                       ))}
@@ -646,7 +716,12 @@ const AmazonOrders = () => {
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
                         <td>{totals.clicks.toLocaleString()}</td>
+                        <td>-</td>
                         <td>{totals.addToCart}</td>
                         <td>{totals.sales}</td>
                         <td>${totals.saleAmount}</td>
@@ -654,6 +729,7 @@ const AmazonOrders = () => {
                         <td className="text-success">${totals.payout}</td>
                         <td>Avg: ${totals.avgPayoutPerClick}</td>
                         <td>${totals.totalRevenue}</td>
+                        <td>-</td>
                         <td className="profit-positive">${totals.totalProfit}</td>
                       </tr>
                     </tfoot>
@@ -696,6 +772,10 @@ const AmazonOrders = () => {
                     </option>
                     <option value="date">Date</option>
                     <option value="products">Products (ASIN)</option>
+                    <option value="affiliate-id">Affiliate ID</option>
+                    <option value="source">Source</option>
+                    <option value="advertiser">Advertiser</option>
+                    <option value="brand-id">Brand ID</option>
                     <option value="sub-id">Sub ID</option>
                     <option value="link-name">Link Name</option>
                     <option value="store">Store</option>
@@ -770,17 +850,61 @@ const AmazonOrders = () => {
                   />
                 </div>
 
-                {/* Store ID */}
+                {/* Affiliate ID */}
                 <div className="mb-4">
                   <label className="form-label fw-semibold mb-2">
-                    Store ID
+                    Affiliate ID
                   </label>
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="Enter Store ID"
-                    value={filters.storeId}
-                    onChange={(e) => handleFilterChange('storeId', e.target.value)}
+                    placeholder="Enter Affiliate ID"
+                    value={filters.affiliateId}
+                    onChange={(e) => handleFilterChange('affiliateId', e.target.value)}
+                  />
+                </div>
+
+                {/* Source */}
+                <div className="mb-4">
+                  <label className="form-label fw-semibold mb-2">
+                    Source
+                  </label>
+                  <select 
+                    className="form-select"
+                    value={filters.source}
+                    onChange={(e) => handleFilterChange('source', e.target.value)}
+                  >
+                    <option value="">All Sources</option>
+                    <option value="levanta">Levanta</option>
+                    <option value="direct">Direct</option>
+                  </select>
+                </div>
+
+                {/* Advertiser */}
+                <div className="mb-4">
+                  <label className="form-label fw-semibold mb-2">
+                    Advertiser
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Enter Advertiser"
+                    value={filters.advertiser}
+                    onChange={(e) => handleFilterChange('advertiser', e.target.value)}
+                  />
+                </div>
+
+                {/* Brand ID */}
+                <div className="mb-4">
+                  <label className="form-label fw-semibold mb-2">
+                    Brand ID
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Enter Brand ID"
+                    value={filters.brandId}
+                    onChange={(e) => handleFilterChange('brandId', e.target.value)}
                   />
                 </div>
 

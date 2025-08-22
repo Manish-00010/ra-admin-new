@@ -169,7 +169,7 @@ const D2CProduct = () => {
           border-top: 1px solid #eee;
         }
       `}</style>
-      
+
       <Container fluid className="main_container">
         <Row className="m-1">
           <div className="col-12 ">
@@ -266,6 +266,13 @@ const D2CProduct = () => {
                                       <span className="radiomark two outline-secondary"></span>
                                       <span className="text-secondary">
                                         Highest Rated
+                                      </span>
+                                    </label>
+                                    <label className="check-box two m-3 ">
+                                      <input type="radio" name="radio-group1" />
+                                      <span className="radiomark two outline-secondary"></span>
+                                      <span className="text-secondary">
+                                        Newly Added
                                       </span>
                                     </label>
                                     <label className="check-box two m-3 ">
@@ -722,14 +729,16 @@ const D2CProduct = () => {
                                       {showDatePicker && (
                                         <div className="date-range-dropdown mt-2">
                                           <div className="date-range-dropdown-header">
-                                            <h6 className="mb-0">Select Date Range</h6>
+                                            <h6 className="mb-0">
+                                              Select Date Range
+                                            </h6>
                                           </div>
 
                                           <div className="date-range-dropdown-body">
-                                            <div className="date-range-presets">
+                                            <div className="date-range-presets mb-0">
                                               {[
                                                 "Today",
-                                                "Yesterday", 
+                                                "Yesterday",
                                                 "Last 7 Days",
                                                 "Last 30 Days",
                                                 "This Month",
@@ -743,7 +752,9 @@ const D2CProduct = () => {
                                                       ? "active"
                                                       : ""
                                                   }`}
-                                                  onClick={() => selectDateRange(preset)}
+                                                  onClick={() =>
+                                                    selectDateRange(preset)
+                                                  }
                                                 >
                                                   {preset}
                                                 </button>
@@ -751,11 +762,13 @@ const D2CProduct = () => {
                                               <button
                                                 type="button"
                                                 className={`date-range-preset ${
-                                                  selectedDateRange.includes("-") &&
+                                                  selectedDateRange.includes(
+                                                    "-"
+                                                  ) &&
                                                   ![
                                                     "Today",
                                                     "Yesterday",
-                                                    "Last 7 Days", 
+                                                    "Last 7 Days",
                                                     "Last 30 Days",
                                                     "This Month",
                                                     "Last Month",
@@ -763,7 +776,9 @@ const D2CProduct = () => {
                                                     ? "active"
                                                     : ""
                                                 }`}
-                                                onClick={() => selectDateRange("Custom")}
+                                                onClick={() =>
+                                                  selectDateRange("Custom")
+                                                }
                                               >
                                                 Custom Range
                                               </button>
@@ -774,7 +789,9 @@ const D2CProduct = () => {
                                                 <label>Start Date</label>
                                                 <input
                                                   type="date"
-                                                  value={customDateRange.startDate}
+                                                  value={
+                                                    customDateRange.startDate
+                                                  }
                                                   onChange={(e) =>
                                                     handleCustomDateChange(
                                                       "startDate",
@@ -787,7 +804,9 @@ const D2CProduct = () => {
                                                 <label>End Date</label>
                                                 <input
                                                   type="date"
-                                                  value={customDateRange.endDate}
+                                                  value={
+                                                    customDateRange.endDate
+                                                  }
                                                   onChange={(e) =>
                                                     handleCustomDateChange(
                                                       "endDate",
@@ -801,7 +820,9 @@ const D2CProduct = () => {
                                                 <button
                                                   type="button"
                                                   className="btn btn-secondary btn-sm"
-                                                  onClick={() => setShowDatePicker(false)}
+                                                  onClick={() =>
+                                                    setShowDatePicker(false)
+                                                  }
                                                 >
                                                   Cancel
                                                 </button>
@@ -881,9 +902,9 @@ const D2CProduct = () => {
                     >
                       <div>
                         <label className="check-box m-3">
-                          <input 
-                            type="radio" 
-                            name="radio-group1" 
+                          <input
+                            type="radio"
+                            name="radio-group1"
                             value="Best Sellers"
                             checked={selectedSortBy === "Best Sellers"}
                             onChange={(e) => setSelectedSortBy(e.target.value)}
@@ -892,9 +913,9 @@ const D2CProduct = () => {
                           <span className="text-secondary">Best Sellers</span>
                         </label>
                         <label className="check-box m-3">
-                          <input 
-                            type="radio" 
-                            name="radio-group1" 
+                          <input
+                            type="radio"
+                            name="radio-group1"
                             value="Highest Rated"
                             checked={selectedSortBy === "Highest Rated"}
                             onChange={(e) => setSelectedSortBy(e.target.value)}
@@ -903,9 +924,20 @@ const D2CProduct = () => {
                           <span className="text-secondary">Highest Rated</span>
                         </label>
                         <label className="check-box m-3">
-                          <input 
-                            type="radio" 
-                            name="radio-group1" 
+                          <input
+                            type="radio"
+                            name="radio-group1"
+                            value="Highest Commission"
+                            checked={selectedSortBy === "Highest Commission"}
+                            onChange={(e) => setSelectedSortBy(e.target.value)}
+                          />
+                          <span className="radiomark outline-secondary"></span>
+                          <span className="text-secondary">Newly Added</span>
+                        </label>
+                        <label className="check-box m-3">
+                          <input
+                            type="radio"
+                            name="radio-group1"
                             value="Highest Commission"
                             checked={selectedSortBy === "Highest Commission"}
                             onChange={(e) => setSelectedSortBy(e.target.value)}
@@ -916,9 +948,9 @@ const D2CProduct = () => {
                           </span>
                         </label>
                         <label className="check-box m-3">
-                          <input 
-                            type="radio" 
-                            name="radio-group1" 
+                          <input
+                            type="radio"
+                            name="radio-group1"
                             value="Price: Low to High"
                             checked={selectedSortBy === "Price: Low to High"}
                             onChange={(e) => setSelectedSortBy(e.target.value)}
@@ -929,9 +961,9 @@ const D2CProduct = () => {
                           </span>
                         </label>
                         <label className="check-box m-3">
-                          <input 
-                            type="radio" 
-                            name="radio-group1" 
+                          <input
+                            type="radio"
+                            name="radio-group1"
                             value="Price: High to Low"
                             checked={selectedSortBy === "Price: High to Low"}
                             onChange={(e) => setSelectedSortBy(e.target.value)}
@@ -942,9 +974,9 @@ const D2CProduct = () => {
                           </span>
                         </label>
                         <label className="check-box m-3">
-                          <input 
-                            type="radio" 
-                            name="radio-group1" 
+                          <input
+                            type="radio"
+                            name="radio-group1"
                             value="Name (A-Z)"
                             checked={selectedSortBy === "Name (A-Z)"}
                             onChange={(e) => setSelectedSortBy(e.target.value)}
@@ -976,9 +1008,9 @@ const D2CProduct = () => {
                     >
                       <div>
                         <label className="check-box m-3">
-                          <input 
-                            type="radio" 
-                            name="geo-group" 
+                          <input
+                            type="radio"
+                            name="geo-group"
                             value="India"
                             checked={selectedGeo === "India"}
                             onChange={(e) => setSelectedGeo(e.target.value)}
@@ -1010,9 +1042,9 @@ const D2CProduct = () => {
                     >
                       <div>
                         <label className="check-box m-3">
-                          <input 
-                            type="radio" 
-                            name="store-group" 
+                          <input
+                            type="radio"
+                            name="store-group"
                             value="All Stores"
                             checked={selectedStore === "All Stores"}
                             onChange={(e) => setSelectedStore(e.target.value)}
@@ -1297,7 +1329,13 @@ const D2CProduct = () => {
                         <div className="product-content-box">
                           <div className="product-grid">
                             <div className="product-image">
-                              <Link to={`/D2C/Products/${product.id}`} className="image">
+                              <span className="bg-danger h-45 w-45 d-flex-center b-r-50 wishlist-like-icon two position-absolute">
+                                <i className="ti ti-heart heart-icon text-light"></i>
+                              </span>
+                              <Link
+                                to={`/D2C/Products/${product.id}`}
+                                className="image"
+                              >
                                 <img
                                   className="pic-1"
                                   src={product.image1}
@@ -1308,10 +1346,7 @@ const D2CProduct = () => {
                                   src={product.image2 || product.image1}
                                   alt=""
                                 />
-                                 <span
-                                  className="active-badge"
-                                  title="Active"
-                                >
+                                <span className="active-badge" title="Active">
                                   <p className="mb-0 text-white">Active</p>
                                 </span>
                               </Link>
@@ -1328,7 +1363,6 @@ const D2CProduct = () => {
                                 {product.title || "D2C Product"}
                               </Link>
                             </div>
-
 
                             {/* Rating Section */}
                             <div className="product-rating my-2">
@@ -1389,9 +1423,7 @@ const D2CProduct = () => {
                                   </span>
                                 </div>
                                 <div className="price-row">
-                                  <span className="price-label">
-                                    Payout
-                                  </span>
+                                  <span className="price-label">Payout</span>
                                   <span className="price-value rate-value">
                                     ₹{product.commission || "79.92"}
                                   </span>

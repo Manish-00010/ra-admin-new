@@ -1,9 +1,10 @@
-import {Fragment, useMemo} from "react";
+import {Fragment, useMemo, useState, useEffect} from "react";
 import {Link, useLocation} from "react-router-dom";
 
 const MenuItem = (props) => {
     const {title, iconClass, type, path, badgeCount, children: links, name, collapseId} = props;
     const {pathname} = useLocation();
+    const [isCollapsed, setIsCollapsed] = useState(false);
 
     const isActive = useMemo(() => {
         return (linkPath) => {
@@ -24,6 +25,22 @@ const MenuItem = (props) => {
         );
     };
 
+    const shouldShowCollapse = useMemo(() => {
+        return (links || []).some(link => isActive(link.path)) || checkUnder(links);
+    }, [links, pathname]);
+
+    // Initialize collapse state based on active menu items
+    useEffect(() => {
+        if (shouldShowCollapse) {
+            setIsCollapsed(true);
+        }
+    }, [shouldShowCollapse]);
+
+    const handleCollapseToggle = (e) => {
+        e.preventDefault();
+        setIsCollapsed(!isCollapsed);
+    };
+
     return (
         <Fragment>
             {type === "dropdown" ? (
@@ -35,9 +52,9 @@ const MenuItem = (props) => {
                     )}
                     <li>
                         <Link
-                            data-bs-toggle="collapse"
-                            to={collapseId ? `#${collapseId}` : ""}
-                            aria-expanded={(links || []).some(link => isActive(link.path))}
+                            to="#"
+                            onClick={handleCollapseToggle}
+                            aria-expanded={isCollapsed || shouldShowCollapse}
                         >
                             <i className={iconClass}></i>
                             {name}
@@ -58,7 +75,7 @@ const MenuItem = (props) => {
                         </Link>
                         {links && (
                             <ul
-                                className={`collapse ${((links || []).some(link => isActive(link.path)) || checkUnder(links)) ? "show" : ""}`}
+                                className={`collapse ${(isCollapsed || shouldShowCollapse) ? "show" : ""}`}
                                 id={collapseId}
                             >
                                 {(links || []).map((link, index) => {
@@ -67,8 +84,8 @@ const MenuItem = (props) => {
                                             {link.children ? (
                                                 <li key={index} className="another-level">
                                                     <Link
-                                                        data-bs-toggle="collapse"
-                                                        to={`#${link.collapseId}`}
+                                                        to="#"
+                                                        onClick={(e) => e.preventDefault()}
                                                         aria-expanded="false"
                                                     >
                                                         {link.name}

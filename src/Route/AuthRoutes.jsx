@@ -27,7 +27,7 @@ const AppsRoutes = {
     SHOP_PRODUCT_PAGE: "/apps/e-shop/product",
     SHOP_CART_PAGE: "/apps/e-shop/cart",
     SHOP_ADD_PRODUCT_PAGE: "/apps/e-shop/add-product",
-    SHOP_PRODUCT_DETAILS_PAGE: "/apps/e-shop/product-details",
+    SHOP_PRODUCT_DETAILS_PAGE: "/apps/e-shop/product-details/:id",
     SHOP_PRODUCT_LIST_PAGE: "/apps/e-shop/product-list",
     SHOP_ORDERS_PAGE: "/apps/e-shop/orders",
     SHOP_ORDERS_DETAILS_PAGE: "/apps/e-shop/orders-details",

@@ -13,6 +13,7 @@ import HeaderMode from "../../Layout/Header/HeaderMode.jsx";
 
 const HeaderMenu = () => {
   const [cartItems, setCartItems] = useState(initialCartItems);
+  const demoProductId = "demo-product-1"; // Added demo product ID for sample links
 
   const handleRemoveItem = (id) => {
     const updatedCartItems = cartItems.filter((item) => item.id !== id);
@@ -425,7 +426,7 @@ const HeaderMenu = () => {
                       <div className="flex-grow-1">
                         <Link
                           className="mb-0 f-w-600 f-s-16"
-                          href="/apps/e-shop/product-details"
+                          href={`/apps/e-shop/product-details/${demoProductId}`}
                         >
                           {item.name}
                         </Link>
@@ -471,7 +472,7 @@ const HeaderMenu = () => {
                       <p className="text-secondary mb-0">Add some items :)</p>
                       <Link
                         className="btn btn-light-primary btn-xs mt-2"
-                        href="/apps/e-shop/product-details"
+                        href={`/apps/e-shop/product-details/${demoProductId}`}
                       >
                         Shop Now
                       </Link>

@@ -27,6 +27,8 @@ import AmazonBrands from '@/Pages/Amazon/Brands';
 import D2CBrands from '@/Pages/D2C/Brands';
 import MyLinks from '@/Pages/MyLinks';
 import D2CMyLinks from '@/Pages/D2C/MyLinks';
+import AmazonMyFavourite from '@/Pages/Amazon/MyFavourite';
+import D2CMyFavourite from '@/Pages/D2C/MyFavourite';
 import AmazonReports from '@/Pages/Amazon/Reports';
 import D2CReports from '@/Pages/D2C/Reports';
 import D2COrders from '@/Pages/D2C/Orders';
@@ -250,9 +252,13 @@ const Routes = () => {
                 { path: "/Amazon/Dashboard", element: <Ecommerce/> }, // dashboard/ecommerce
                 { path: "/Amazon/Products", element: <Product/> }, // apps/e-shop/product
                 { path: "/Amazon/Brands", element: <AmazonBrands/> },
-                { path: "/D2C/Brands", element: <D2CBrands/> },
                 { path: "/Amazon/MyLinks", element: <MyLinks/> }, // My Product Links page
+                { path: "/Amazon/MyFavourite", element: <AmazonMyFavourite/> }, // Amazon My Favourite page
+                { path: "/Amazon/Orders", element: <AmazonOrders/> }, // Amazon Orders page
+                { path: "/Amazon/Reports", element: <AmazonReports/> }, // Amazon Reports page
+                { path: "/D2C/Brands", element: <D2CBrands/> },
                 { path: "/D2C/MyLinks", element: <D2CMyLinks/> }, // D2C My Product Links page
+                { path: "/D2C/MyFavourite", element: <D2CMyFavourite/> }, // D2C My Favourite page
                 { path: "/Amazon/Orders", element: <AmazonOrders/> }, // Amazon Orders page
                 { path: "/Amazon/Reports", element: <AmazonReports/> }, // Amazon Reports page
                 { path: "/profile/view", element: <Settings/> },

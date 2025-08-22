@@ -268,10 +268,10 @@ const D2CBrandsDatatable = () => {
               Filters
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem>All D2C Links</DropdownItem>
-              <DropdownItem>Featured Brands</DropdownItem>
-              <DropdownItem>Active Brands</DropdownItem>
-              <DropdownItem>Inactive Brands</DropdownItem>
+              <DropdownItem>Newly Added</DropdownItem>
+              <DropdownItem>Applied For</DropdownItem>
+              <DropdownItem>Rejected</DropdownItem>
+              <DropdownItem>Cancelled</DropdownItem>
             </DropdownMenu>
           </Dropdown>
 

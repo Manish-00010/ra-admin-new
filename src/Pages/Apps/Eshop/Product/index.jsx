@@ -14,12 +14,12 @@ import { useDebounce } from "@/hooks/useDebounce";
 
 const Product = () => {
   // State to track the layout view
-  const [layout, setLayout] = useState("col-xl-4 col-sm-4 col-lg-4"); // Default to 4-column view
+  const [layout, setLayout] = useState("col-xl-4 col-sm-4 col-lg-4 col-exl-3"); // Default to 4-column view
   const [isListView, setIsListView] = useState(false); // Toggle between grid and list view
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState("name");
   const [filterCategory, setFilterCategory] = useState("all");
-  
+
   // Debounce search term for better performance
   const debouncedSearchTerm = useDebounce(searchTerm, 300);
 
@@ -29,23 +29,30 @@ const Product = () => {
 
     // Filter by search term
     if (debouncedSearchTerm) {
-      filtered = filtered.filter(product =>
-        (product.title || product.name || '').toLowerCase().includes(debouncedSearchTerm.toLowerCase()) ||
-        (product.category || '').toLowerCase().includes(debouncedSearchTerm.toLowerCase())
+      filtered = filtered.filter(
+        (product) =>
+          (product.title || product.name || "")
+            .toLowerCase()
+            .includes(debouncedSearchTerm.toLowerCase()) ||
+          (product.category || "")
+            .toLowerCase()
+            .includes(debouncedSearchTerm.toLowerCase())
       );
     }
 
     // Filter by category
     if (filterCategory !== "all") {
-      filtered = filtered.filter(product => product.category === filterCategory);
+      filtered = filtered.filter(
+        (product) => product.category === filterCategory
+      );
     }
 
     // Sort products
     filtered.sort((a, b) => {
       switch (sortBy) {
         case "name":
-          const nameA = a.title || a.name || '';
-          const nameB = b.title || b.name || '';
+          const nameA = a.title || a.name || "";
+          const nameB = b.title || b.name || "";
           return nameA.localeCompare(nameB);
         case "price":
           return (a.price || 0) - (b.price || 0);
@@ -165,11 +172,19 @@ const Product = () => {
                                         Best Sellers
                                       </span>
                                     </label>
+
                                     <label className="check-box two m-3 ">
                                       <input type="radio" name="radio-group1" />
                                       <span className="radiomark two outline-secondary"></span>
                                       <span className="text-secondary">
                                         Highest Rated
+                                      </span>
+                                    </label>
+                                    <label className="check-box two m-3 ">
+                                      <input type="radio" name="radio-group1" />
+                                      <span className="radiomark two outline-secondary"></span>
+                                      <span className="text-secondary">
+                                        Newly Added
                                       </span>
                                     </label>
                                     <label className="check-box two m-3 ">
@@ -653,6 +668,11 @@ const Product = () => {
                         <label className="check-box m-3">
                           <input type="radio" name="radio-group1" />
                           <span className="radiomark outline-secondary"></span>
+                          <span className="text-secondary">Newly Added</span>
+                        </label>
+                        <label className="check-box m-3">
+                          <input type="radio" name="radio-group1" />
+                          <span className="radiomark outline-secondary"></span>
                           <span className="text-secondary">
                             Highest Commission
                           </span>
@@ -1008,8 +1028,15 @@ const Product = () => {
                       <CardBody className="p-0">
                         <div className="product-content-box">
                           <div className="product-grid">
-                            <div className="product-image">
-                              <a href="#" className="image">
+                            <div className="product-image position-relative">
+                              <span className="bg-danger h-45 w-45 d-flex-center b-r-50 wishlist-like-icon two position-absolute">
+                                <i className="ti ti-heart heart-icon text-light"></i>
+                              </span>
+
+                              <Link
+                                to={`/Amazon/Products/${product.id}`}
+                                className="m-0 f-s-16 f-w-500"
+                              >
                                 <img
                                   className="pic-1"
                                   src={product.image1}
@@ -1028,8 +1055,7 @@ const Product = () => {
                                   <i className="ph-duotone ph-barcode"></i>{" "}
                                   <p>ASIN: B01N1UX8RW</p>
                                 </span>
-                              </a>
-                              
+                              </Link>
                             </div>
                           </div>
 
@@ -1037,7 +1063,7 @@ const Product = () => {
                             {/* Product Title */}
                             <div className="mb-2">
                               <Link
-                                to="/apps/e-shop/product-details"
+                                to={`/Amazon/Products/${product.id}`}
                                 className="m-0 f-s-16 f-w-500"
                               >
                                 {product.title}
@@ -1064,10 +1090,26 @@ const Product = () => {
                             </div>
 
                             {/* Category Badge */}
-                            <div className="mb-3">
-                              <span className="category-badge">
-                                {product.category || "Electronics"}
-                              </span>
+                            <div className="category-badge mb-3 d-flex justify-content-between align-items-center">
+                              <span>{product.category || "D2C Product"}</span>
+                              <div className="social-media-icons d-flex align-items-center gap-2">
+                                <i
+                                  className="ph ph-google-logo text-danger f-s-18"
+                                  title="Google"
+                                ></i>
+                                <i
+                                  className="ph ph-youtube-logo text-danger f-s-18"
+                                  title="YouTube"
+                                ></i>
+                                <i
+                                  className="ph ph-facebook-logo text-primary f-s-18"
+                                  title="Facebook"
+                                ></i>
+                                <i
+                                  className="ph ph-instagram-logo text-primary f-s-18"
+                                  title="Instagram"
+                                ></i>
+                              </div>
                             </div>
 
                             {/* Pricing Section */}
@@ -1112,9 +1154,10 @@ const Product = () => {
                             <div className="d-flex flex-column gap-2">
                               {/* Preview Link Button */}
                               <button className="preview-link-btn btn btn-outline-secondary btn-sm">
-                                <i className="ti ti-eye me-1"></i> Preview Link
+                                <i className="ti ti-eye me-1"></i> View On
+                                Amazon
                               </button>
-                              
+
                               {/* Affiliate Button */}
                               <button className="affiliate-btn">
                                 Generate Tracking Link

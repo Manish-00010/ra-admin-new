@@ -59,98 +59,101 @@ const ProductsCards = () => {
       details: "50 product",
       imgSrc: "/assets/images/dashboard/ecommerce-dashboard/wristwatch.png",
       voucher: "@RA0911",
-      sold: "60%",
-      price: "$340.00",
-      commission: "12%",
+      orders: 145,
+      saleAmount: "$34,500",
+      payout: "$4,140",
     },
     {
       name: "Shoes",
       details: "200 product",
       imgSrc: "/assets/images/dashboard/ecommerce-dashboard/shoes.png",
       voucher: "@RA6547",
-      sold: "50%",
-      price: "$450.00",
-      commission: "7%",
+      orders: 267,
+      saleAmount: "$45,200",
+      payout: "$3,164",
     },
     {
       name: "Airpods Pro",
       details: "20 product",
       imgSrc: "/assets/images/dashboard/ecommerce-dashboard/earphone.png",
       voucher: "@RA5672",
-      sold: "87%",
-      price: "$500.00",
-      commission: "9%",
+      orders: 189,
+      saleAmount: "$50,800",
+      payout: "$4,572",
     },
     {
       name: "Purce",
       details: "180 product",
       imgSrc: "/assets/images/dashboard/ecommerce-dashboard/backpack.png",
       voucher: "@RA0546",
-      sold: "68%",
-      price: "$480.00",
-      commission: "15%",
+      orders: 298,
+      saleAmount: "$48,600",
+      payout: "$7,290",
     },
     {
       name: "Tree Pot",
       details: "80 product",
       imgSrc: "/assets/images/dashboard/ecommerce-dashboard/plant.png",
       voucher: "@RA340",
-      sold: "52%",
-      price: "$579.00",
-      commission: "13%",
+      orders: 123,
+      saleAmount: "$57,900",
+      payout: "$7,527",
     },
   ];
 
 
   const brands = [
-  {
+    {
       name: "Amazon",
-      details: "50 product",
+      iconClass: "icon-arrow-top",
+      iconColor: "txt-success",
       imgSrc: "/assets/images/dashboard/ecommerce-dashboard/amazon.png",
-      voucher: "@RA0911",
-      sold: "60%",
-      price: "$340.00",
+      links: "Visit Site",
+      orders: 342,
+      saleAmount: "$89,750",
+      payout: "$8,975",
     },
     {
       name: "Nyka",
-      details: "200 product",
+      iconClass: "icon-arrow-bottom",
+      iconColor: "txt-danger",
       imgSrc: "/assets/images/dashboard/ecommerce-dashboard/nyka.png",
-      voucher: "@RA6547",
-      sold: "50%",
-      price: "$450.00",
+      links: "Visit Site",
+      orders: 198,
+      saleAmount: "$45,650",
+      payout: "$4,565",
     },
     {
       name: "Shopify",
-      details: "20 product",
+      iconClass: "icon-arrow-top",
+      iconColor: "txt-success",
       imgSrc: "/assets/images/dashboard/ecommerce-dashboard/shopify.png",
-      voucher: "@RA5672",
-      sold: "87%",
-      price: "$500.00",
+      links: "Visit Site",
+      orders: 287,
+      saleAmount: "$76,890",
+      payout: "$7,689",
     },
     {
       name: "eBay",
-      details: "180 product",
+      iconClass: "icon-arrow-top",
+      iconColor: "txt-success",
       imgSrc: "/assets/images/dashboard/ecommerce-dashboard/ebay.png",
-      voucher: "@RA0546",
-      sold: "68%",
-      price: "$480.00",
+      links: "Visit Site",
+      orders: 245,
+      saleAmount: "$67,340",
+      payout: "$6,734",
     },
     {
       name: "Walmart",
-      details: "80 product",
+      iconClass: "icon-arrow-bottom",
+      iconColor: "txt-danger",
       imgSrc: "/assets/images/dashboard/ecommerce-dashboard/walmart.png",
-      voucher: "@RA340",
-      sold: "52%",
-      price: "$579.00",
+      links: "Visit Site",
+      orders: 156,
+      saleAmount: "$42,890",
+      payout: "$4,289",
     },
-    {
-      name: "Etsy",
-      details: "80 product",
-      imgSrc: "/assets/images/dashboard/ecommerce-dashboard/etsy.png",
-      voucher: "@RA340",
-      sold: "52%",
-      price: "$579.00",
-    },
+
   ];
 
   return (
@@ -170,10 +173,10 @@ const ProductsCards = () => {
               <Table className="align-middle top-products-table mb-0" striped>
                 <thead>
                   <tr>
-                    <th>Product</th>
-                    <th>Sold</th>
-                    <th>Price</th>
-                    <th className="text-center">Commission</th>
+                    <th>Brand</th>
+                    <th>Orders</th>
+                    <th>Sale Amount</th>
+                    <th className="text-center">Payout</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -194,9 +197,9 @@ const ProductsCards = () => {
                           </div>
                         </div>
                       </td>
-                      <td>{product.sold}</td>
-                      <td>{product.price}</td>
-                      <td className="text-center">{product.commission}</td>
+                      <td>{product.orders}</td>
+                      <td>{product.saleAmount}</td>
+                      <td className="text-center">{product.payout}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -222,27 +225,32 @@ const ProductsCards = () => {
                 <thead>
                   <tr>
                     <th>Brand</th>
-                    <th className="text-center">Links</th>
+                    <th>Orders</th>
+                    <th>Sale Amount</th>
+                    <th className="text-center">Payout</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {brands.map((brands, index) => (
+                  {brands.map((brand, index) => (
                     <tr key={index}>
                       <td>
                         <div className="d-flex align-items-center">
                           <div className="position-relative">
                             <img
-                              src={brands.imgSrc}
-                              alt={brands.name}
+                              src={brand.imgSrc}
+                              alt={brand.name}
                               className="w-35"
                             />
                           </div>
                           <div className="ms-3">
-                            <p className="mb-0">{brands.name}</p>
+                            <h6 className="mb-0">{brand.name}</h6>
+                            <p className="mb-0">{brand.links}</p>
                           </div>
                         </div>
                       </td>
-                      <td className="text-center"><a href="#">Visit Site</a></td>
+                      <td>{brand.orders}</td>
+                      <td>{brand.saleAmount}</td>
+                      <td className="text-center">{brand.payout}</td>
                     </tr>
                   ))}
                 </tbody>

@@ -283,7 +283,7 @@ const D2COrders = () => {
                           </div>
                           
                           <div className="date-range-dropdown-body">
-                            <div className="date-range-presets">
+                            <div className="date-range-presets mb-0">
                               {['Today', 'Yesterday', 'Last 7 Days', 'Last 30 Days', 'This Month', 'Last Month'].map((preset) => (
                                 <button
                                   key={preset}

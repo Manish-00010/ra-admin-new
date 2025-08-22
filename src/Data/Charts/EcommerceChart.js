@@ -637,8 +637,98 @@ const overviewChartData ={
         },
     },
 }
+
+const detailedPageViewsChartData = {
+    series: [{
+        name: 'Page Views',
+        data: [25, 35, 28, 42, 38, 48]
+    }],
+    chart: {
+        width: 140,
+        height: 120,
+        type: 'line'
+    },
+    dataLabels: {
+        enabled: false
+    },
+    colors: ['#28a745'],
+    stroke: {
+        curve: 'smooth',
+        width: 3
+    },
+    annotations: {
+        points: [{
+            x: 50,
+            y: 42,
+            marker: {
+                size: 5,
+                colors: '#fff',
+                strokeColor: '#28a745',
+                strokeWidth: 4,
+                cssClass: 'marker-success',
+            }
+        }],
+    },
+    xaxis: {
+        show: true,
+        type: 'category',
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        labels: {
+            show: false
+        },
+        axisBorder: {
+            show: false
+        },
+        axisTicks: {
+            show: false
+        }
+    },
+    yaxis: {
+        show: false,
+    },
+    grid: {
+        show: false,
+        xaxis: {
+            lines: {
+                show: false
+            }
+        },
+        yaxis: {
+            lines: {
+                show: false
+            }
+        },
+    },
+    tooltip: {
+        enabled: false,
+    },
+    responsive: [{
+        breakpoint: 1440,
+        options: {
+            chart: {
+                width:100,
+                height: 120
+            },
+            annotations: {
+                points: [{
+                    x: 35,
+                    y: 42,
+                    marker: {
+                        size: 5,
+                        colors: '#fff',
+                        strokeColor: '#28a745',
+                        strokeWidth: 4,
+                        cssClass: 'marker-success',
+                    }
+                }],
+            },
+        }
+    }]
+};
+
 export {
     visitsChartData,
+    detailedPageViewsChartData,
     orderChartData,
     activityChartData,
     salesChartData,

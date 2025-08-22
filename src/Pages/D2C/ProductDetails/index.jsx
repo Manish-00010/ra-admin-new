@@ -83,7 +83,7 @@ const D2CProductDetails = () => {
       {/* Breadcrumb */}
       <Row className="m-1">
         <Col xs={12}>
-          <h4 className="main-title">Product Details</h4>
+          <h4 className="main-title">D2C Product Details</h4>
           <ul className="app-line-breadcrumbs mb-3">
             <li className="">
               <Link to="/D2C/Dashboard" className="f-s-14 f-w-500">
@@ -202,7 +202,7 @@ const D2CProductDetails = () => {
                       </div>
                     </div>
 
-                    <div className="product-price mb-4">
+                    <div className="product-price mb-2">
                       <div className="d-flex align-items-center gap-3">
                         <h4 className="current-price text-success mb-0">
                           ₹{product.price}
@@ -218,7 +218,11 @@ const D2CProductDetails = () => {
                       </div>
                     </div>
 
-                    <div className="product-category mb-4">
+                    <div className="product-category mb-2">
+                     
+                      <Badge color="light-secondary f-s-16">ID:2</Badge>
+                    </div>
+                    <div className="product-category mb-2">
                       <h6>Category</h6>
                       <Badge color="light-secondary">{product.category}</Badge>
                     </div>
@@ -317,7 +321,7 @@ const D2CProductDetails = () => {
                           <h6 className="text-primary mb-3">
                             Product Benefits
                           </h6>
-                          <p className="mb-3">
+                          <p className="mb-0">
                             This product is designed to enhance your daily
                             experience with its innovative features and reliable
                             performance. Whether you're using it for personal or
@@ -389,7 +393,7 @@ const D2CProductDetails = () => {
                       <i className="ti ti-test-pipe text-white fs-5"></i>
                     </div>
                     <div>
-                      <h5 className="mb-1 fw-bold">PRODUCT TESTING DATA</h5>
+                      <h5 className="mb-1 fw-bold">Product Testing Data</h5>
                     </div>
                   </div>
                 </CardHeader>
@@ -421,7 +425,7 @@ const D2CProductDetails = () => {
                             <div className="col-12 px-0">
                               <div className="d-flex justify-content-between align-items-center p-2 bg-white rounded shadow-sm">
                                 <div className="d-flex align-items-center gap-2">
-                                  <i className="ti ti-calendar-x text-danger"></i>
+                                  <i className="ti ti-calendar-event text-primary"></i>
                                   <span className="small fw-medium">
                                     Test End Date
                                   </span>
@@ -431,19 +435,7 @@ const D2CProductDetails = () => {
                                 </span>
                               </div>
                             </div>
-                            <div className="col-12 px-0">
-                              <div className="d-flex justify-content-between align-items-center p-2 bg-white rounded shadow-sm">
-                                <div className="d-flex align-items-center gap-2">
-                                  <i className="ti ti-shopping-bag text-warning"></i>
-                                  <span className="small fw-medium">
-                                   Payout
-                                  </span>
-                                </div>
-                                <span className="fw-bold text-warning">
-                                  ₹ 628
-                                </span>
-                              </div>
-                            </div>
+
                             <div className="col-12 px-0">
                               <div className="d-flex justify-content-between align-items-center p-2 bg-white rounded shadow-sm">
                                 <div className="d-flex align-items-center gap-2">
@@ -454,6 +446,19 @@ const D2CProductDetails = () => {
                                 </div>
                                 <span className="fw-bold text-success">
                                   ₹ 2,399
+                                </span>
+                              </div>
+                            </div>
+                            <div className="col-12 px-0">
+                              <div className="d-flex justify-content-between align-items-center p-2 bg-white rounded shadow-sm">
+                                <div className="d-flex align-items-center gap-2">
+                                  <i className="ti ti-shopping-bag text-warning"></i>
+                                  <span className="small fw-medium">
+                                    Payout
+                                  </span>
+                                </div>
+                                <span className="fw-bold text-warning">
+                                  ₹ 628
                                 </span>
                               </div>
                             </div>
@@ -487,12 +492,10 @@ const D2CProductDetails = () => {
                               <div className="d-flex justify-content-between align-items-center p-2 bg-white rounded shadow-sm">
                                 <div className="d-flex align-items-center gap-2">
                                   <i className="ti ti-chart-line text-primary"></i>
-                                  <span className="small fw-medium">
-                                    ROAS
-                                  </span>
+                                  <span className="small fw-medium">ROAS</span>
                                 </div>
                                 <span className="fw-bold text-primary">
-                                  ₹ 79,263
+                                  12x
                                 </span>
                               </div>
                             </div>
@@ -614,17 +617,6 @@ const D2CProductDetails = () => {
                             <div className="col-12 px-0">
                               <div className="d-flex justify-content-between align-items-center p-2 bg-white rounded shadow-sm">
                                 <div className="d-flex align-items-center gap-2">
-                                  <i className="ti ti-shopping-cart text-primary"></i>
-                                  <span className="small fw-medium">
-                                    Total Orders
-                                  </span>
-                                </div>
-                                <span className="fw-bold text-primary">33</span>
-                              </div>
-                            </div>
-                            <div className="col-12 px-0">
-                              <div className="d-flex justify-content-between align-items-center p-2 bg-white rounded shadow-sm">
-                                <div className="d-flex align-items-center gap-2">
                                   <i className="ti ti-calculator text-info"></i>
                                   <span className="small fw-medium">
                                     Aggregate CPA
@@ -673,9 +665,20 @@ const D2CProductDetails = () => {
                             <div className="col-12 px-0">
                               <div className="d-flex justify-content-between align-items-center p-2 bg-white rounded shadow-sm">
                                 <div className="d-flex align-items-center gap-2">
-                                  <i className="ti ti-circle-check text-success"></i>
+                                  <i className="ti ti-shopping-cart text-primary"></i>
                                   <span className="small fw-medium">
-                                    Confirmation Rate
+                                    Order Placed
+                                  </span>
+                                </div>
+                                <span className="fw-bold text-primary">33</span>
+                              </div>
+                            </div>
+                            <div className="col-12 px-0">
+                              <div className="d-flex justify-content-between align-items-center p-2 bg-white rounded shadow-sm">
+                                <div className="d-flex align-items-center gap-2">
+                                  <i className="ti ti-truck-delivery text-success"></i>
+                                  <span className="small fw-medium">
+                                    Order Shipped %
                                   </span>
                                 </div>
                                 <span className="fw-bold text-success">
@@ -686,9 +689,9 @@ const D2CProductDetails = () => {
                             <div className="col-12 px-0">
                               <div className="d-flex justify-content-between align-items-center p-2 bg-white rounded shadow-sm">
                                 <div className="d-flex align-items-center gap-2">
-                                  <i className="ti ti-truck text-info"></i>
+                                  <i className="ti ti-package-export text-info"></i>
                                   <span className="small fw-medium">
-                                    Est. Delivery Rate
+                                    Order Delivered %
                                   </span>
                                 </div>
                                 <span className="fw-bold text-info">65%</span>
@@ -704,389 +707,6 @@ const D2CProductDetails = () => {
             </Col>
           </Row>
 
-          {/* Payoutability Calculator */}
-          <Row className="mt-4">
-            <Col xs={12}>
-              <Card className="border-1 mb-0">
-                <CardHeader className="border-1">
-                  <div className="d-flex justify-content-between align-items-center">
-                    <h5 className="mb-0 fw-bold text-dark">
-                      PayoutABILITY CALCULATOR
-                    </h5>
-                    <div className="d-flex align-items-center gap-2">
-                      <span className="text-muted">Toggle Advanced View</span>
-                      <div className="form-check form-switch">
-                        <Input
-                          type="checkbox"
-                          className="form-check-input"
-                          id="advancedToggle"
-                          checked={advancedView}
-                          onChange={(e) => setAdvancedView(e.target.checked)}
-                          style={{
-                            backgroundColor: advancedView
-                              ? "#6c757d"
-                              : "#dee2e6",
-                            borderColor: advancedView ? "#6c757d" : "#dee2e6",
-                          }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardBody className="pt-2">
-                  <Row className="g-3">
-                    {/* Expected Orders */}
-                    <Col lg={3} md={6} sm={12}>
-                      <div>
-                        <div className="d-flex align-items-center gap-1 mb-2">
-                          <Label
-                            className="text-primary fw-medium mb-0"
-                            style={{ fontSize: "0.9rem" }}
-                          >
-                            Expected Orders
-                          </Label>
-                          <i
-                            className="ti ti-info-circle text-muted"
-                            style={{ fontSize: "0.8rem" }}
-                          ></i>
-                        </div>
-                        <div className="mb-2">
-                          <Input
-                            type="number"
-                            value={expectedOrders}
-                            onChange={(e) =>
-                              setExpectedOrders(parseInt(e.target.value) || 0)
-                            }
-                            className="text-center fw-bold border-1"
-                            style={{
-                              fontSize: "1.4rem",
-                              backgroundColor: "white",
-                              borderRadius: "8px",
-                              padding: "8px",
-                            }}
-                          />
-                        </div>
-                        <Input
-                          type="range"
-                          min="0"
-                          max="100000"
-                          value={expectedOrders}
-                          onChange={(e) =>
-                            setExpectedOrders(parseInt(e.target.value))
-                          }
-                          className="form-range"
-                        />
-                        <div className="d-flex justify-content-between mt-0">
-                          <small
-                            className="text-muted"
-                            style={{ fontSize: "0.75rem" }}
-                          >
-                            0
-                          </small>
-                          <small
-                            className="text-muted"
-                            style={{ fontSize: "0.75rem" }}
-                          >
-                            1,00,000+
-                          </small>
-                        </div>
-                      </div>
-                    </Col>
-
-                    {/* Selling Price */}
-                    <Col lg={3} md={6} sm={12}>
-                      <div>
-                        <div className="d-flex align-items-center gap-1 mb-2">
-                          <Label
-                            className="text-primary fw-medium mb-0"
-                            style={{ fontSize: "0.9rem" }}
-                          >
-                            Selling Price (₹)
-                          </Label>
-                          <i
-                            className="ti ti-info-circle text-muted"
-                            style={{ fontSize: "0.8rem" }}
-                          ></i>
-                        </div>
-                        <div className="input-group mb-2">
-                          <span className="input-group-text border-1 bg-white text-dark fw-bold">
-                            ₹
-                          </span>
-                          <Input
-                            type="number"
-                            value={sellingPrice}
-                            onChange={(e) =>
-                              setSellingPrice(parseInt(e.target.value) || 0)
-                            }
-                            className="text-center fw-bold border-1"
-                            style={{
-                              fontSize: "1.4rem",
-                              backgroundColor: "white",
-                              borderRadius: "0 8px 8px 0",
-                            }}
-                          />
-                        </div>
-                        <Input
-                          type="range"
-                          min="1254"
-                          max="11397"
-                          value={sellingPrice}
-                          onChange={(e) =>
-                            setSellingPrice(parseInt(e.target.value))
-                          }
-                          className="form-range"
-                        />
-                        <div className="d-flex justify-content-between mt-0">
-                          <small
-                            className="text-muted"
-                            style={{ fontSize: "0.75rem" }}
-                          >
-                            ₹ 1,254
-                          </small>
-                          <small
-                            className="text-muted"
-                            style={{ fontSize: "0.75rem" }}
-                          >
-                            MRP: ₹ 11,397
-                          </small>
-                        </div>
-                      </div>
-                    </Col>
-
-                    {/* Confirmation Rate */}
-                    <Col lg={3} md={6} sm={12}>
-                      <div>
-                        <div className="d-flex align-items-center gap-1 mb-2">
-                          <Label
-                            className="text-primary fw-medium mb-0"
-                            style={{ fontSize: "0.9rem" }}
-                          >
-                            Confirmation Rate (%)
-                          </Label>
-                          <i
-                            className="ti ti-info-circle text-muted"
-                            style={{ fontSize: "0.8rem" }}
-                          ></i>
-                        </div>
-                        <div className="input-group mb-2">
-                          <Input
-                            type="number"
-                            value={confirmationRate}
-                            onChange={(e) =>
-                              setConfirmationRate(parseInt(e.target.value) || 0)
-                            }
-                            className="text-center fw-bold border-1"
-                            style={{
-                              fontSize: "1.4rem",
-                              backgroundColor: "white",
-                              borderRadius: "8px 0 0 8px",
-                            }}
-                          />
-                          <span className="input-group-text border-1 bg-white text-dark fw-bold">
-                            %
-                          </span>
-                        </div>
-                        <Input
-                          type="range"
-                          min="0"
-                          max="100"
-                          value={confirmationRate}
-                          onChange={(e) =>
-                            setConfirmationRate(parseInt(e.target.value))
-                          }
-                          className="form-range"
-                        />
-                        <div className="d-flex justify-content-between mt-0">
-                          <small
-                            className="text-muted"
-                            style={{ fontSize: "0.75rem" }}
-                          >
-                            0
-                          </small>
-                          <small
-                            className="text-muted"
-                            style={{ fontSize: "0.75rem" }}
-                          >
-                            100%
-                          </small>
-                        </div>
-                      </div>
-                    </Col>
-
-                    {/* Expected Delivery */}
-                    <Col lg={3} md={6} sm={12}>
-                      <div>
-                        <div className="d-flex align-items-center gap-1 mb-2">
-                          <Label
-                            className="text-primary fw-medium mb-0"
-                            style={{ fontSize: "0.9rem" }}
-                          >
-                            Expected Delivery (%)
-                          </Label>
-                          <i
-                            className="ti ti-info-circle text-muted"
-                            style={{ fontSize: "0.8rem" }}
-                          ></i>
-                        </div>
-                        <div className="input-group mb-2">
-                          <Input
-                            type="number"
-                            value={expectedDelivery}
-                            onChange={(e) =>
-                              setExpectedDelivery(parseInt(e.target.value) || 0)
-                            }
-                            className="text-center fw-bold border-1"
-                            style={{
-                              fontSize: "1.4rem",
-                              backgroundColor: "white",
-                              borderRadius: "8px 0 0 8px",
-                            }}
-                          />
-                          <span className="input-group-text border-1 bg-white text-dark fw-bold">
-                            %
-                          </span>
-                        </div>
-                        <Input
-                          type="range"
-                          min="0"
-                          max="100"
-                          value={expectedDelivery}
-                          onChange={(e) =>
-                            setExpectedDelivery(parseInt(e.target.value))
-                          }
-                          className="form-range"
-                        />
-                        <div className="d-flex justify-content-between mt-0">
-                          <small
-                            className="text-muted"
-                            style={{ fontSize: "0.75rem" }}
-                          >
-                            0
-                          </small>
-                          <small
-                            className="text-muted"
-                            style={{ fontSize: "0.75rem" }}
-                          >
-                            100%
-                          </small>
-                        </div>
-                      </div>
-                    </Col>
-                  </Row>
-
-                  {/* Results Section */}
-                  <Row className="mt-4 g-3">
-                    <Col lg={3} md={6} sm={12}>
-                      <div>
-                        <div className="d-flex align-items-center gap-1 mb-2">
-                          <Label
-                            className="text-primary fw-medium mb-0"
-                            style={{ fontSize: "0.9rem" }}
-                          >
-                            Ad Spend per Order (₹)
-                          </Label>
-                          <i
-                            className="ti ti-info-circle text-muted"
-                            style={{ fontSize: "0.8rem" }}
-                          ></i>
-                        </div>
-                        <div className="input-group mb-2">
-                          <span className="input-group-text border-1 bg-white text-dark fw-bold">
-                            ₹
-                          </span>
-                          <Input
-                            type="number"
-                            value={adSpendPerOrder}
-                            onChange={(e) =>
-                              setAdSpendPerOrder(parseInt(e.target.value) || 0)
-                            }
-                            className="text-center fw-bold border-1"
-                            style={{
-                              fontSize: "1.4rem",
-                              backgroundColor: "white",
-                              borderRadius: "0 8px 8px 0",
-                            }}
-                          />
-                        </div>
-                      </div>
-                    </Col>
-                    {/* Net Payout Per Delivered Order */}
-                    <Col lg={3} md={6} sm={12}>
-                      <div className="bg-white rounded p-3 text-center border">
-                        <div className="d-flex align-items-center justify-content-center gap-1 mb-2 ">
-                          <Label
-                            className="text-muted fw-medium mb-0"
-                            style={{ fontSize: "12px" }}
-                          >
-                            Payout Per Order (₹)
-                          </Label>
-                          <i
-                            className="ti ti-info-circle text-muted"
-                            style={{ fontSize: "0.7rem" }}
-                          ></i>
-                        </div>
-                        <h4
-                          className="text-dark mb-0 fw-bold f-s-20"
-                          style={{ color: "#333" }}
-                        >
-                          ₹{" "}
-                          {(
-                            (sellingPrice - 628 - adSpendPerOrder) *
-                            (confirmationRate / 100) *
-                            (expectedDelivery / 100)
-                          ).toFixed(2)}
-                        </h4>
-                      </div>
-                    </Col>
-
-                    {/* Payout Margin */}
-                    <Col lg={3} md={6} sm={12}>
-                      <div className="bg-white rounded p-3 text-center border">
-                        <div className="d-flex align-items-center justify-content-center gap-1 mb-2">
-                          <Label
-                            className="text-muted fw-medium mb-0"
-                            style={{ fontSize: "12px" }}
-                          >
-                            Payout Margin (%)
-                          </Label>
-                          <i
-                            className="ti ti-info-circle text-muted"
-                            style={{ fontSize: "0.7rem" }}
-                          ></i>
-                        </div>
-                        <h4 className="text-dark mb-0 fw-bold f-s-20">
-                          {(
-                            ((sellingPrice - 628 - adSpendPerOrder) /
-                              sellingPrice) *
-                            100
-                          ).toFixed(1)}{" "}
-                          %
-                        </h4>
-                      </div>
-                    </Col>
-
-                    {/* Potential Payout */}
-                    <Col lg={3} md={6} sm={12}>
-                      <div className="bg-white rounded py-3 text-center border">
-                        <div className="text-muted mb-2" style={{ fontSize: "12px" }}>
-                          Potential Payout
-                        </div>
-                        <h3 className="text-dark mb-0 fw-bold f-s-16">
-                          ≈₹{" "}
-                          {(
-                            expectedOrders *
-                            (sellingPrice - 628 - adSpendPerOrder) *
-                            (confirmationRate / 100) *
-                            (expectedDelivery / 100)
-                          ).toLocaleString("en-IN")}
-                        </h3>
-                      </div>
-                    </Col>
-                  </Row>
-                </CardBody>
-              </Card>
-            </Col>
-          </Row>
           {/* Ad Performance Overview */}
           <Row className="mt-4">
             <Col xs={12}>
@@ -1593,6 +1213,346 @@ const D2CProductDetails = () => {
             </Col>
           </Row>
 
+          {/* Payoutability Calculator */}
+          <Row className="mt-4">
+            <Col xs={12}>
+              <Card className="border-1 mb-0">
+                <CardHeader className="border-1">
+                  <div className="d-flex justify-content-between align-items-center">
+                    <h5 className="mb-0 fw-bold text-dark">
+                      Profitability Calculator
+                    </h5>
+                  </div>
+                </CardHeader>
+                <CardBody className="pt-2">
+                  <Row className="g-3">
+                    {/* Expected Orders */}
+                    <Col lg={3} md={6} sm={12}>
+                      <div>
+                        <div className="d-flex align-items-center gap-1 mb-2">
+                          <Label
+                            className="text-primary fw-medium mb-0"
+                            style={{ fontSize: "0.9rem" }}
+                          >
+                            Expected Orders
+                          </Label>
+                          <i
+                            className="ti ti-info-circle text-muted"
+                            style={{ fontSize: "0.8rem" }}
+                          ></i>
+                        </div>
+                        <div className="mb-2">
+                          <Input
+                            type="number"
+                            value={expectedOrders}
+                            onChange={(e) =>
+                              setExpectedOrders(parseInt(e.target.value) || 0)
+                            }
+                            className="text-center fw-bold border-1"
+                            style={{
+                              fontSize: "1.4rem",
+                              backgroundColor: "white",
+                              borderRadius: "8px",
+                              padding: "8px",
+                            }}
+                          />
+                        </div>
+                        <Input
+                          type="range"
+                          min="0"
+                          max="100000"
+                          value={expectedOrders}
+                          onChange={(e) =>
+                            setExpectedOrders(parseInt(e.target.value))
+                          }
+                          className="form-range"
+                        />
+                        <div className="d-flex justify-content-between mt-0">
+                          <small
+                            className="text-muted"
+                            style={{ fontSize: "0.75rem" }}
+                          >
+                            0
+                          </small>
+                          <small
+                            className="text-muted"
+                            style={{ fontSize: "0.75rem" }}
+                          >
+                            1,00,000+
+                          </small>
+                        </div>
+                      </div>
+                    </Col>
+
+                    <Col lg={3} md={6} sm={12}>
+                      <div>
+                        <div className="d-flex align-items-center gap-1 mb-2">
+                          <Label
+                            className="text-primary fw-medium mb-0"
+                            style={{ fontSize: "0.9rem" }}
+                          >
+                            Selling Price (₹)
+                          </Label>
+                          <i
+                            className="ti ti-info-circle text-muted"
+                            style={{ fontSize: "0.8rem" }}
+                          ></i>
+                        </div>
+                        <div className="input-group mb-2">
+                          <span className="input-group-text border-1 bg-white text-dark fw-bold">
+                            ₹
+                          </span>
+                          <Input
+                            type="number"
+                            value={sellingPrice}
+                            readOnly
+                            className="text-center fw-bold border-1"
+                            style={{
+                              fontSize: "1.4rem",
+                              backgroundColor: "#f8f9fa",
+                              borderRadius: "0 8px 8px 0",
+                              color: "#495057",
+                            }}
+                          />
+                        </div>
+                      </div>
+                    </Col>
+                    <Col lg={3} md={6} sm={12}>
+                      <div>
+                        <div className="d-flex align-items-center gap-1 mb-2">
+                          <Label
+                            className="text-primary fw-medium mb-0"
+                            style={{ fontSize: "0.9rem" }}
+                          >
+                            Confirmation Rate (%)
+                          </Label>
+                          <i
+                            className="ti ti-info-circle text-muted"
+                            style={{ fontSize: "0.8rem" }}
+                          ></i>
+                        </div>
+                        <div className="input-group mb-2">
+                          <Input
+                            type="number"
+                            value={confirmationRate}
+                            onChange={(e) =>
+                              setConfirmationRate(parseInt(e.target.value) || 0)
+                            }
+                            className="text-center fw-bold border-1"
+                            style={{
+                              fontSize: "1.4rem",
+                              backgroundColor: "white",
+                              borderRadius: "8px 0 0 8px",
+                            }}
+                          />
+                          <span className="input-group-text border-1 bg-white text-dark fw-bold">
+                            %
+                          </span>
+                        </div>
+                        <Input
+                          type="range"
+                          min="0"
+                          max="100"
+                          value={confirmationRate}
+                          onChange={(e) =>
+                            setConfirmationRate(parseInt(e.target.value))
+                          }
+                          className="form-range"
+                        />
+                        <div className="d-flex justify-content-between mt-0">
+                          <small
+                            className="text-muted"
+                            style={{ fontSize: "0.75rem" }}
+                          >
+                            0
+                          </small>
+                          <small
+                            className="text-muted"
+                            style={{ fontSize: "0.75rem" }}
+                          >
+                            100%
+                          </small>
+                        </div>
+                      </div>
+                    </Col>
+
+                    {/* Expected Delivery */}
+                    <Col lg={3} md={6} sm={12}>
+                      <div>
+                        <div className="d-flex align-items-center gap-1 mb-2">
+                          <Label
+                            className="text-primary fw-medium mb-0"
+                            style={{ fontSize: "0.9rem" }}
+                          >
+                            Expected Delivery (%)
+                          </Label>
+                          <i
+                            className="ti ti-info-circle text-muted"
+                            style={{ fontSize: "0.8rem" }}
+                          ></i>
+                        </div>
+                        <div className="input-group mb-2">
+                          <Input
+                            type="number"
+                            value={expectedDelivery}
+                            onChange={(e) =>
+                              setExpectedDelivery(parseInt(e.target.value) || 0)
+                            }
+                            className="text-center fw-bold border-1"
+                            style={{
+                              fontSize: "1.4rem",
+                              backgroundColor: "white",
+                              borderRadius: "8px 0 0 8px",
+                            }}
+                          />
+                          <span className="input-group-text border-1 bg-white text-dark fw-bold">
+                            %
+                          </span>
+                        </div>
+                        <Input
+                          type="range"
+                          min="0"
+                          max="100"
+                          value={expectedDelivery}
+                          onChange={(e) =>
+                            setExpectedDelivery(parseInt(e.target.value))
+                          }
+                          className="form-range"
+                        />
+                        <div className="d-flex justify-content-between mt-0">
+                          <small
+                            className="text-muted"
+                            style={{ fontSize: "0.75rem" }}
+                          >
+                            0
+                          </small>
+                          <small
+                            className="text-muted"
+                            style={{ fontSize: "0.75rem" }}
+                          >
+                            100%
+                          </small>
+                        </div>
+                      </div>
+                    </Col>
+                  </Row>
+
+                  {/* Results Section */}
+                  <Row className="mt-4 g-3">
+                    <Col lg={3} md={6} sm={12}>
+                      <div>
+                        <div className="d-flex align-items-center gap-1 mb-2">
+                          <Label
+                            className="text-primary fw-medium mb-0"
+                            style={{ fontSize: "0.9rem" }}
+                          >
+                            Ad Spend per Order (₹)
+                          </Label>
+                          <i
+                            className="ti ti-info-circle text-muted"
+                            style={{ fontSize: "0.8rem" }}
+                          ></i>
+                        </div>
+                        <div className="input-group mb-2">
+                          <span className="input-group-text border-1 bg-white text-dark fw-bold">
+                            ₹
+                          </span>
+                          <Input
+                            type="number"
+                            value={adSpendPerOrder}
+                            onChange={(e) =>
+                              setAdSpendPerOrder(parseInt(e.target.value) || 0)
+                            }
+                            className="text-center fw-bold border-1"
+                            style={{
+                              fontSize: "1.4rem",
+                              backgroundColor: "white",
+                              borderRadius: "0 8px 8px 0",
+                            }}
+                          />
+                        </div>
+                      </div>
+                    </Col>
+                    {/* Net Payout Per Delivered Order */}
+                    <Col lg={3} md={6} sm={12}>
+                      <div className="bg-white rounded p-3 text-center border">
+                        <div className="d-flex align-items-center justify-content-center gap-1 mb-2 ">
+                          <Label
+                            className="text-muted fw-medium mb-0"
+                            style={{ fontSize: "12px" }}
+                          >
+                            Payout Per Order (₹)
+                          </Label>
+                          <i
+                            className="ti ti-info-circle text-muted"
+                            style={{ fontSize: "0.7rem" }}
+                          ></i>
+                        </div>
+                        <h4
+                          className="text-dark mb-0 fw-bold f-s-20"
+                          style={{ color: "#333" }}
+                        >
+                          ₹{" "}
+                          {(
+                            (sellingPrice - 628 - adSpendPerOrder) *
+                            (confirmationRate / 100) *
+                            (expectedDelivery / 100)
+                          ).toFixed(2)}
+                        </h4>
+                      </div>
+                    </Col>
+
+                    {/* Payout Margin */}
+                    <Col lg={3} md={6} sm={12}>
+                      <div className="bg-white rounded p-3 text-center border">
+                        <div className="d-flex align-items-center justify-content-center gap-1 mb-2">
+                          <Label
+                            className="text-muted fw-medium mb-0"
+                            style={{ fontSize: "12px" }}
+                          >
+                            Payout Margin (%)
+                          </Label>
+                          <i
+                            className="ti ti-info-circle text-muted"
+                            style={{ fontSize: "0.7rem" }}
+                          ></i>
+                        </div>
+                        <h4 className="text-dark mb-0 fw-bold f-s-20">
+                          {(
+                            ((sellingPrice - 628 - adSpendPerOrder) /
+                              sellingPrice) *
+                            100
+                          ).toFixed(1)}{" "}
+                          %
+                        </h4>
+                      </div>
+                    </Col>
+
+                    {/* Potential Payout */}
+                    <Col lg={3} md={6} sm={12}>
+                      <div className="bg-white rounded py-3 text-center border">
+                        <div
+                          className="text-muted mb-2"
+                          style={{ fontSize: "12px" }}
+                        >
+                          Potential Payout
+                        </div>
+                        <h3 className="text-dark mb-0 fw-bold f-s-16">
+                          ≈₹{" "}
+                          {(
+                            expectedOrders *
+                            (sellingPrice - 628 - adSpendPerOrder) *
+                            (confirmationRate / 100) *
+                            (expectedDelivery / 100)
+                          ).toLocaleString("en-IN")}
+                        </h3>
+                      </div>
+                    </Col>
+                  </Row>
+                </CardBody>
+              </Card>
+            </Col>
+          </Row>
           <Row className="mt-4">
             <Col xs={12}>
               <Card className="mb-0">
@@ -1812,18 +1772,11 @@ const D2CProductDetails = () => {
                     <span>Product Price:</span>
                     <strong>₹{product.price}</strong>
                   </div>
-                  <div className="d-flex justify-content-between mb-3">
+                  <div className="d-flex justify-content-between">
                     <span>Payout:</span>
                     <strong className="text-success">
                       ₹{(product.price * 0.12).toFixed(2)}
                     </strong>
-                  </div>
-
-                  <div className="d-flex justify-content-between mb-3">
-                    <span>Total Commission:</span>
-                    <h5 className="text-success mb-0">
-                      ₹{(product.price * 0.12 * quantity).toFixed(2)}
-                    </h5>
                   </div>
                 </div>
 
@@ -1862,9 +1815,9 @@ const D2CProductDetails = () => {
 
                   <div className="d-flex justify-content-between mb-2">
                     <span>Brand:</span>
-                    <span>Brand Store</span>
+                    <span>{product.category}</span>
                   </div>
-                  
+
                   <div className="d-flex justify-content-between mb-2">
                     <span>Created Date:</span>
                     <span>{new Date().toLocaleDateString()}</span>

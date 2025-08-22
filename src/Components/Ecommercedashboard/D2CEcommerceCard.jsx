@@ -21,34 +21,6 @@ const EcommerceCard = () => {
                   <span className="bg-primary h-40 w-40 d-flex-center b-r-15 f-s-18">
                     <i className="ph-bold ph-mouse"></i>
                   </span>
-                  <div className="dropdown">
-                    <Link
-                      to="#"
-                      className="text-primary"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      Last Month<i className="ti ti-chevron-down ms-1"></i>
-                    </Link>
-                    <ul className="dropdown-menu  dropdown-menu-end">
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          Last Month
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          Last Week
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          Last Year
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="flex-shrink-0 align-self-end">
@@ -78,50 +50,12 @@ const EcommerceCard = () => {
                   <span className="bg-warning h-40 w-40 d-flex-center b-r-15 f-s-18">
                     <i className="ph-bold ph-bank"></i>
                   </span>
-                  <div className="dropdown">
-                    <Link
-                      to="#"
-                      className="text-warning "
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      July<i className="ti ti-chevron-down ms-1"></i>
-                    </Link>
-                    <ul className="dropdown-menu  dropdown-menu-end">
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          January
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          February
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          March
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          April
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          ...
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="flex-shrink-0 align-self-end">
                     <p className="f-s-16 mb-0">Payout</p>
                     <h5>
-                      $48,500 <span className="f-s-12 text-success">+22%</span>
+                      &#8377; 48,500 <span className="f-s-12 text-success">+22%</span>
                     </h5>
                   </div>
                   <div className="sales-chart">
@@ -145,34 +79,6 @@ const EcommerceCard = () => {
                   <span className="bg-dark h-40 w-40 d-flex-center b-r-15 f-s-18">
                     <i className="ph-bold ph-percent"></i>
                   </span>
-                  <div className="dropdown">
-                    <Link
-                      to="#"
-                      className="text-dark "
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      Today<i className="ti ti-chevron-down ms-1"></i>
-                    </Link>
-                    <ul className="dropdown-menu  dropdown-menu-end">
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          Today
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          Tomorrow
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          Last Week
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="flex-shrink-0 align-self-end">
@@ -203,34 +109,6 @@ const EcommerceCard = () => {
                   <span className="bg-secondary h-40 w-40 d-flex-center b-r-15 f-s-18">
                     <i className="ph-bold ph-shopping-cart"></i>
                   </span>
-                  <div className="dropdown">
-                    <Link
-                      to="#"
-                      className="text-secondary "
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      Weekly<i className="ti ti-chevron-down ms-1"></i>
-                    </Link>
-                    <ul className="dropdown-menu  dropdown-menu-end">
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          Monthly
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          Weekly
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          Yearly
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
                 <div className="d-flex justify-content-between align-items-center position-relative">
                   <div className="flex-shrink-0 align-self-end">
@@ -260,34 +138,6 @@ const EcommerceCard = () => {
                   <span className="bg-info h-40 w-40 d-flex-center b-r-15 f-s-18">
                     <i className="ph-bold ph-truck"></i>
                   </span>
-                  <div className="dropdown">
-                    <Link
-                      to="#"
-                      className="text-info "
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      Today<i className="ti ti-chevron-down ms-1"></i>
-                    </Link>
-                    <ul className="dropdown-menu  dropdown-menu-end">
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          Today
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          Tomorrow
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          Last Week
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="flex-shrink-0 align-self-end">
@@ -317,44 +167,6 @@ const EcommerceCard = () => {
                   <span className="bg-success h-40 w-40 d-flex-center b-r-15 f-s-18">
                     <i className="ph-bold ph-package"></i>
                   </span>
-                  <div className="dropdown">
-                    <Link
-                      to="#"
-                      className="text-success "
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      July<i className="ti ti-chevron-down ms-1"></i>
-                    </Link>
-                    <ul className="dropdown-menu  dropdown-menu-end">
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          January
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          February
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          March
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          April
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          ...
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="flex-shrink-0 align-self-end">

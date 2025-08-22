@@ -375,17 +375,7 @@ const MyLinksDatatable = () => {
             />
           </div>
 
-          {/* Filter Dropdown */}
-          <Dropdown isOpen={filterDropdownOpen} toggle={toggleFilterDropdown}>
-            <DropdownToggle caret color="outline-secondary">
-              Filters
-            </DropdownToggle>
-            <DropdownMenu>
-              <DropdownItem>All Links</DropdownItem>
-              <DropdownItem>Mobile Optimized</DropdownItem>
-              <DropdownItem>Desktop Only</DropdownItem>
-            </DropdownMenu>
-          </Dropdown>
+          
 
           {/* Export Button */}
           <Button color="outline-secondary" size="sm">
@@ -403,7 +393,7 @@ const MyLinksDatatable = () => {
           <thead>
             <tr>
               <th>Copy Link</th>
-              <th>ASIN Code</th>
+              <th>ASIN</th>
               <th>Product</th>
               <th>Link Name</th>
               <th>Sub ID</th>
@@ -447,27 +437,19 @@ const MyLinksDatatable = () => {
                     <div className="mylinks-product-info">
                       <a
                         href="#"
-                        className="mb-1 fw-semibold text-truncate"
+                        className="mb-0 fw-semibold text-truncate"
                         style={{ maxWidth: "300px" }}
                       >
                         {link.product.name}
                       </a>
-                      <small className="text-muted">
-                        {link.product.sku} - {link.product.source} -{" "}
-                        {link.product.brand}
-                      </small>
                     </div>
                   </div>
                 </td>
                 <td>
                   <div>
-                    <Badge color="info" className="mb-1">
+                    <Badge color="transprent text-dark" className="mb-1">
                       {link.source}
                     </Badge>
-                    <br />
-                    <small className="text-muted">
-                      C1-A1-V1_MB • C1-A1-V1_MB
-                    </small>
                   </div>
                 </td>
                 <td>None</td>

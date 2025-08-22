@@ -1,6 +1,6 @@
 import Sidebar from "./Sidebar";
 import Header from "./Header";
-import {Outlet} from "react-router-dom";
+import {Outlet, useLocation} from "react-router-dom";
 import Footer from "./Footer";
 import ScrollArrow from "./Footer/ScrollArrow";
 import {useEffect, useState} from "react";
@@ -8,6 +8,7 @@ import Customizer from "./Customizer";
 
 const Layout = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Default to true for open sidebar
+    const location = useLocation();
     
     useEffect(() => {
         // Always add active class to body on component mount
@@ -40,10 +41,17 @@ const Layout = () => {
         const sidebar = e.target.closest('.vertical-sidebar');
         const toggleButton = e.target.closest('.toggle-semi-nav');
         const headerToggle = e.target.closest('.header-toggle');
+        const linkElement = e.target.closest('a');
+        
+        // Don't close sidebar when clicking on navigation links
+        if (linkElement && linkElement.getAttribute('href')) {
+            return; // Prevent sidebar from closing when navigating
+        }
         
         if (!sidebar && !toggleButton && !headerToggle) {
-            // On mobile devices (max width 500px), close sidebar when clicking outside
-            if (window.innerWidth <= 500 && isSidebarOpen) {
+            // On mobile devices (max width 768px), close sidebar when clicking outside
+            // Increased threshold to be more mobile-specific
+            if (window.innerWidth <= 768 && isSidebarOpen) {
                 setIsSidebarOpen(false); // This will close the sidebar on mobile
             }
         }

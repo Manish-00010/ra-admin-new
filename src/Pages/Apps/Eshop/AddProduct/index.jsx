@@ -151,7 +151,7 @@ const AddProduct = () => {
                                                     Discard
                                                 </button>
                                                 <Link
-                                                    to="/apps/e-shop/product-details"
+                                                    to={`/apps/e-shop/product-details/${product.id}`}
                                                     role="button"
                                                     className="btn btn-primary ms-1"
                                                 >

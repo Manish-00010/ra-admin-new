@@ -383,10 +383,6 @@ const D2CMyLinksDatatable = () => {
                       >
                         {link.product.name}
                       </a>
-                      <small className="text-muted">
-                        {link.product.sku} - {link.product.source} -{" "}
-                        {link.product.brand}
-                      </small>
                     </div>
                   </div>
                 </td>
@@ -396,9 +392,7 @@ const D2CMyLinksDatatable = () => {
                       {link.source}
                     </Badge>
                     <br />
-                    <small className="text-muted">
-                      D2C-C1-A1-V1_MB • D2C-C1-A1-V1_MB
-                    </small>
+                  
                   </div>
                 </td>
                 <td>
